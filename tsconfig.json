@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "None",
+    "moduleResolution": "Node",
+    "target": "ES5",
+    "sourceMap": true,
+    "strict": true,
+    "baseUrl": "src/",
+    "skipLibCheck": true, // TODO fix Window problem.. somehow
+    "lib": [
+      "ES5", "DOM"
+    ]
+  },
+  "include": [
+    "src/"
+  ]
+}
