@@ -6,9 +6,10 @@
     "sourceMap": true,
     "strict": true,
     "baseUrl": "src/",
+    "outDir": "dist/",
     "skipLibCheck": true, // TODO fix Window problem.. somehow
     "lib": [
-      "ES5", "DOM"
+      "ES6"
     ]
   },
   "include": [

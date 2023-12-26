@@ -1,23 +1,23 @@
 declare class CacheEntry {
-    constructor(cache: CacheMap, key: string, item: string);
+  constructor(cache: CacheMap, key: string, item: string);
 
-    cache: CacheMap;
-    key: string;
-    item: string;
-    cached: boolean;
-    touchTicks: number;
-    touchSeconds: number;
-    ttlTicks: number;
-    ttlSeconds: number;
-    freedByTTL: boolean;
+  cache: CacheMap;
+  key: string;
+  item: string;
+  cached: boolean;
+  touchTicks: number;
+  touchSeconds: number;
+  ttlTicks: number;
+  ttlSeconds: number;
+  freedByTTL: boolean;
 
-    free(byTTL?: boolean): void;
+  free(byTTL?: boolean): void;
 
-    allocate(): CacheEntry;
+  allocate(): CacheEntry;
 
-    setTimeToLive(ticks?: number, seconds?: number): CacheEntry;
+  setTimeToLive(ticks?: number, seconds?: number): CacheEntry;
 
-    isStillAlive(): boolean;
+  isStillAlive(): boolean;
 
-    touch(): void;
+  touch(): void;
 }

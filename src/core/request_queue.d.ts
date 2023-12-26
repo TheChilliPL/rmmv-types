@@ -1,18 +1,18 @@
 interface RequestQueueItem {
-    key: string;
-    value: Bitmap;
+  key: string;
+  value: Bitmap;
 }
 
 declare class RequestQueue {
-    initialize(): void;
+  initialize(): void;
 
-    _queue: RequestQueueItem[];
+  _queue: RequestQueueItem[];
 
-    enqueue(key: string, value: Bitmap): void;
+  enqueue(key: string, value: Bitmap): void;
 
-    update(): void;
+  update(): void;
 
-    raisePriority(key: string): void;
+  raisePriority(key: string): void;
 
-    clear(): void;
+  clear(): void;
 }

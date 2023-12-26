@@ -1,21 +1,21 @@
 declare class Utils {
-    private constructor();
+  private constructor();
 
-    static RPGMAKER_NAME: "MV";
-    static RPGMAKER_VERSION: string;
+  static RPGMAKER_NAME: "MV";
+  static RPGMAKER_VERSION: string;
 
-    static isOptionValid(name: string): boolean;
+  static isOptionValid(name: string): boolean;
 
-    static isNwjs(): boolean;
-    static isMobileDevice(): boolean;
-    static isMobileSafari(): boolean;
-    static isAndroidChrome(): boolean;
+  static isNwjs(): boolean;
+  static isMobileDevice(): boolean;
+  static isMobileSafari(): boolean;
+  static isAndroidChrome(): boolean;
 
-    static canReadGameFiles(): boolean;
+  static canReadGameFiles(): boolean;
 
-    static rgbToCssColor(r: number, g: number, b: number): string;
+  static rgbToCssColor(r: number, g: number, b: number): string;
 
-    static generateRuntimeId(): number;
+  static generateRuntimeId(): number;
 
-    static isSupportPassiveEvent(): boolean
+  static isSupportPassiveEvent(): boolean;
 }

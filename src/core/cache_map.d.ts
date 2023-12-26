@@ -1,21 +1,21 @@
 declare class CacheMap {
-    constructor(manager: object);
+  constructor(manager: object);
 
-    manager: object;
-    _inner: { [key: string]: any };
-    _lastRemovedEntries: {} | any[];
-    updateTicks: number;
-    lastCheckTTL: number;
-    delayCheckTTL: number;
-    updateSeconds: number;
+  manager: object;
+  _inner: { [key: string]: any };
+  _lastRemovedEntries: {} | any[];
+  updateTicks: number;
+  lastCheckTTL: number;
+  delayCheckTTL: number;
+  updateSeconds: number;
 
-    checkTTL(): void;
+  checkTTL(): void;
 
-    getItem(key: string): any;
+  getItem(key: string): any;
 
-    clear(): void;
+  clear(): void;
 
-    setItem(key: string, item: any): CacheEntry;
+  setItem(key: string, item: any): CacheEntry;
 
-    update(ticks: number, delta: number): void;
+  update(ticks: number, delta: number): void;
 }

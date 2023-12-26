@@ -1,0 +1,21 @@
+declare class Game_Item {
+  initialize(item: Data_Item): void;
+
+  _dataClass: string;
+  _itemId: number;
+
+  isSkill(): boolean;
+  isItem(): boolean;
+  isUsableItem(): boolean;
+  isWeapon(): boolean;
+  isArmor(): boolean;
+  isEquipItem(): boolean;
+  isNull(): boolean;
+
+  itemId(): number;
+
+  object(): Data_Item;
+  setObject(item: Data_Item): void;
+
+  setEquip(isWeapon: boolean, itemId: number): void;
+}

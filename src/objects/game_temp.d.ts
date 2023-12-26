@@ -1,20 +1,20 @@
 declare class Game_Temp {
-    initialize(): void;
+  initialize(): void;
 
-    _isPlaytest: boolean;
-    _commonEventId: number;
-    _destinationX: Maybe<number>;
-    _destinationY: Maybe<number>;
+  _isPlaytest: boolean;
+  _commonEventId: number;
+  _destinationX: Maybe<number>;
+  _destinationY: Maybe<number>;
 
-    isPlaytest(): boolean;
+  isPlaytest(): boolean;
 
-    reserveCommonEvent(commonEventId: number): void;
-    clearCommonEvent(): void;
-    isCommonEventReserved(): boolean;
-    reservedCommonEvent(): Data_CommonEvent;
-    setDestination(x: number, y: number): void;
-    clearDestination(): void;
-    isDestinationValid(): boolean;
-    destinationX(): number;
-    destinationY(): number;
+  reserveCommonEvent(commonEventId: number): void;
+  clearCommonEvent(): void;
+  isCommonEventReserved(): boolean;
+  reservedCommonEvent(): Data_CommonEvent;
+  setDestination(x: number, y: number): void;
+  clearDestination(): void;
+  isDestinationValid(): boolean;
+  destinationX(): number;
+  destinationY(): number;
 }

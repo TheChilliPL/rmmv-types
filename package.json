@@ -3,15 +3,18 @@
   "version": "0.1.0",
   "description": "Type definitions for RPG Maker MV",
   "author": "TheChilliPL",
-  "types": "**",
+  "types": "src/**/*.d.ts",
   "scripts": {
     "build": "tsc --build",
     "postinstall": "npx patch-package"
   },
   "devDependencies": {
+    "patch-package": "^6.4.7",
+    "prettier": "^3.1.1"
+  },
+  "dependencies": {
     "@types/fpsmeter": "0.3.30",
     "@types/pixi.js": "4.5.4",
-    "patch-package": "^6.4.7",
-    "typescript": "4.2.4"
+    "typescript": "^5.3.3"
   }
 }

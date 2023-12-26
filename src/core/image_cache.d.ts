@@ -1,26 +1,26 @@
 declare interface ImageCacheItem {
-    bitmap: Bitmap;
-    touch: number;
-    key: string;
-    reservationId?: number;
+  bitmap: Bitmap;
+  touch: number;
+  key: string;
+  reservationId?: number;
 }
 
 declare class ImageCache {
-    limit: number;
+  limit: number;
 
-    initialize(): void;
+  initialize(): void;
 
-    _items: { [key: string]: ImageCacheItem };
+  _items: { [key: string]: ImageCacheItem };
 
-    add(key: string, value: Bitmap): void;
+  add(key: string, value: Bitmap): void;
 
-    get(key: string): Maybe<Bitmap>;
+  get(key: string): Maybe<Bitmap>;
 
-    reserve(key: string, value: Bitmap, reservationId: number): void;
+  reserve(key: string, value: Bitmap, reservationId: number): void;
 
-    releaseReservation(reservationId: number): void;
+  releaseReservation(reservationId: number): void;
 
-    isReady(): boolean;
+  isReady(): boolean;
 
-    getErrorBitmap(): Bitmap;
+  getErrorBitmap(): Bitmap;
 }

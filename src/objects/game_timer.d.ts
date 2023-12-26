@@ -1,13 +1,13 @@
 declare class Game_Timer {
-    initialize(): void;
+  initialize(): void;
 
-    _frames: number;
-    _working: boolean;
+  _frames: number;
+  _working: boolean;
 
-    update(sceneActive: boolean): void;
-    start(count: number): void;
-    stop(): void;
-    isWorking(): boolean;
-    seconds(): number;
-    onExpire(): void;
+  update(sceneActive: boolean): void;
+  start(count: number): void;
+  stop(): void;
+  isWorking(): boolean;
+  seconds(): number;
+  onExpire(): void;
 }

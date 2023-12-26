@@ -1,34 +1,34 @@
 declare const enum WeatherType {
-    None = "none",
-    Rain = "rain",
-    Storm = "storm",
-    Snow = "snow"
+  None = "none",
+  Rain = "rain",
+  Storm = "storm",
+  Snow = "snow",
 }
 
 declare class Weather extends PIXI.Container {
-    initialize(): void;
+  initialize(): void;
 
-    _width: number;
-    _height: number;
-    _sprites: Sprite[];
+  _width: number;
+  _height: number;
+  _sprites: Sprite[];
 
-    type: WeatherType;
+  type: WeatherType;
 
-    power: number;
+  power: number;
 
-    origin: Point;
+  origin: Point;
 
-    update(): void;
+  update(): void;
 
-    _createBitmaps(): void;
-    _createDimmer(): void;
-    _updateDimmer(): void;
-    _updateAllSprites(): void;
-    _addSprite(): void;
-    _removeSprite(): void;
-    _updateSprite(sprite: Sprite): void;
-    _updateRainSprite(sprite: Sprite): void;
-    _updateStormSprite(sprite: Sprite): void;
-    _updateSnowSprite(sprite: Sprite): void;
-    _rebornSprite(sprite: Sprite): void;
+  _createBitmaps(): void;
+  _createDimmer(): void;
+  _updateDimmer(): void;
+  _updateAllSprites(): void;
+  _addSprite(): void;
+  _removeSprite(): void;
+  _updateSprite(sprite: Sprite): void;
+  _updateRainSprite(sprite: Sprite): void;
+  _updateStormSprite(sprite: Sprite): void;
+  _updateSnowSprite(sprite: Sprite): void;
+  _rebornSprite(sprite: Sprite): void;
 }
