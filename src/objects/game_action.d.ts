@@ -21,6 +21,7 @@ declare class Game_Action {
   static HITTYPE_PHYSICAL: Data_HitType.PhysicalAttack;
   static HITTYPE_MAGICAL: Data_HitType.MagicalAttack;
 
+  constructor(subject: Game_Battler, forcing: boolean = false);
   initialize(subject: Game_Battler, forcing: boolean = false): void;
 
   clear();

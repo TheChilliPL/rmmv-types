@@ -5,7 +5,7 @@
 declare class Game_Map {
   initialize(): void;
 
-  _interpreter: Game_Interpreter;
+  _interpreter: Game_interpreter;
   _mapId: number;
   _tilesetId: number;
   _events: Game_Event[];

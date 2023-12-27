@@ -12,6 +12,7 @@ declare const enum BitmapLoadingState {
 
 declare class Bitmap {
   constructor(width: number, height: number);
+  initialize(width: number, height: number): void;
 
   _reuseImages: HTMLImageElement[];
 
@@ -34,8 +35,6 @@ declare class Bitmap {
   readonly _baseTexture: PIXI.BaseTexture;
 
   _renewCanvas(): void;
-
-  initialize(width: number, height: number): void;
 
   _defer?: boolean;
 

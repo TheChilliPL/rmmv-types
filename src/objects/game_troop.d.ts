@@ -7,7 +7,7 @@ declare class Game_Troop extends Game_Unit<Game_Enemy> {
 
   override initialize(): void;
 
-  _interpreter: Game_Interpreter;
+  _interpreter: Game_interpreter;
 
   isEventRunning(): boolean;
 

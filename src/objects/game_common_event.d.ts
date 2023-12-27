@@ -3,6 +3,7 @@
  * running parallel process events.
  */
 declare class Game_CommonEvent {
+  constructor(commonEventId: number);
   initialize(commonEventId: number): void;
 
   _commonEventId: number;

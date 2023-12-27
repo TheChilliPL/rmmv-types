@@ -10,7 +10,7 @@ declare const enum Data_CommandType {
    * They're simply a way to comment the event behavior.
    *
    * The engine, after executing this function, leaves all the comments
-   * in the {@link Game_Interpreter._comments} array, so the plugins can,
+   * in the {@link Game_interpreter._comments} array, so the plugins can,
    * for example, read some metadata from it.
    *
    * TODO: Find out why {@link Data_CommandType.CommentTextData} exists.
@@ -147,20 +147,20 @@ declare const enum Data_CommandType {
 }
 
 declare const enum Data_ConditionalBranchType {
-  Switch = 0,
-  Variable = 1,
-  SelfSwitch = 2,
-  Timer = 3,
-  Actor = 4,
-  Enemy = 5,
-  Character = 6,
-  Gold = 7,
-  Item = 8,
-  Weapon = 9,
-  Armor = 10,
-  Button = 11,
-  Script = 12,
-  Vehicle = 13,
+  Switch,
+  Variable,
+  SelfSwitch,
+  Timer,
+  Actor,
+  Enemy,
+  Character,
+  Gold,
+  Item,
+  Weapon,
+  Armor0,
+  Button1,
+  Script2,
+  Vehicle3,
 }
 
 declare const enum Data_CommandSwitchState {
@@ -169,20 +169,24 @@ declare const enum Data_CommandSwitchState {
 }
 
 declare const enum Data_ConditionalBranchVariableOperandType {
-  Constant = 0,
-  Variable = 1,
+  Constant,
+  Variable,
 }
 
-declare type Data_ConditionalBranchVariableOperand =
-  | ([comparableType: number, otherParam: unknown] &
-      [
+declare type Data_ConditionalBranchVariableOperand = [
+  comparableType: number,
+  otherParam: unknown,
+] &
+  (
+    | [
         comparableType: Data_ConditionalBranchVariableOperandType.Constant,
         constant: number,
-      ])
-  | [
-      comparableType: Data_ConditionalBranchVariableOperandType.Variable,
-      variableId: number,
-    ];
+      ]
+    | [
+        comparableType: Data_ConditionalBranchVariableOperandType.Variable,
+        variableId: number,
+      ]
+  );
 
 declare const enum Data_ConditionalBranchVariableComparator {
   Equal,
@@ -199,61 +203,69 @@ declare const enum Data_ConditionalBranchTimerComparator {
 }
 
 declare const enum Data_ConditionalBranchActorConditionType {
-  InParty = 0,
-  Name = 1,
-  Class = 2,
-  Skill = 3,
-  Weapon = 4,
-  Armor = 5,
-  State = 6,
+  InParty,
+  Name,
+  Class,
+  Skill,
+  Weapon,
+  Armor,
+  State,
 }
 
-declare type Data_ConditionalBranchActorCondition =
-  | ([conditionType: number, otherParam: unknown] &
-      [
+declare type Data_ConditionalBranchActorCondition = [
+  conditionType: number,
+  otherParam: unknown,
+] &
+  (
+    | [
         conditionType: Data_ConditionalBranchActorConditionType.InParty,
         dummy: unknown,
-      ])
-  | [conditionType: Data_ConditionalBranchActorConditionType.Name, name: string]
-  | [
-      conditionType: Data_ConditionalBranchActorConditionType.Class,
-      classId: number,
-    ]
-  | [
-      conditionType: Data_ConditionalBranchActorConditionType.Skill,
-      skillId: number,
-    ]
-  | [
-      conditionType: Data_ConditionalBranchActorConditionType.Weapon,
-      weaponId: number,
-    ]
-  | [
-      conditionType: Data_ConditionalBranchActorConditionType.Armor,
-      armorId: number,
-    ]
-  | [
-      conditionType: Data_ConditionalBranchActorConditionType.State,
-      stateId: number,
-    ];
+      ]
+    | [
+        conditionType: Data_ConditionalBranchActorConditionType.Name,
+        name: string,
+      ]
+    | [
+        conditionType: Data_ConditionalBranchActorConditionType.Class,
+        classId: number,
+      ]
+    | [
+        conditionType: Data_ConditionalBranchActorConditionType.Skill,
+        skillId: number,
+      ]
+    | [
+        conditionType: Data_ConditionalBranchActorConditionType.Weapon,
+        weaponId: number,
+      ]
+    | [
+        conditionType: Data_ConditionalBranchActorConditionType.Armor,
+        armorId: number,
+      ]
+    | [
+        conditionType: Data_ConditionalBranchActorConditionType.State,
+        stateId: number,
+      ]
+  );
 
 declare const enum Data_ConditionalBranchEnemyConditionType {
-  Alive = 0,
-  State = 1,
+  Alive,
+  State,
 }
 
-declare type Data_ConditionalBranchEnemyCondition =
-  | ([
-      conditionType: Data_ConditionalBranchEnemyConditionType,
-      otherParam?: unknown,
-    ] &
-      [
+declare type Data_ConditionalBranchEnemyCondition = [
+  conditionType: Data_ConditionalBranchEnemyConditionType,
+  otherParam?: unknown,
+] &
+  (
+    | [
         conditionType: Data_ConditionalBranchEnemyConditionType.Alive,
         dummy?: unknown,
-      ])
-  | [
-      conditionType: Data_ConditionalBranchEnemyConditionType.State,
-      stateId: number,
-    ];
+      ]
+    | [
+        conditionType: Data_ConditionalBranchEnemyConditionType.State,
+        stateId: number,
+      ]
+  );
 
 declare const enum Data_ConditionalBranchGoldComparator {
   GreaterOrEqual,
@@ -320,104 +332,113 @@ declare type Data_ConditionalBranchParameters = [
   );
 
 declare const enum Data_ControlVariablesOperationType {
-  Set = 0,
-  Add = 1,
-  Subtract = 2,
-  Multiply = 3,
-  Divide = 4,
-  Modulo = 5,
+  Set,
+  Add,
+  Subtract,
+  Multiply,
+  Divide,
+  Modulo,
 }
 
 declare const enum Data_ControlVariablesOperand {
-  Constant = 0,
-  Variable = 1,
-  Random = 2,
-  GameData = 3,
-  Script = 4,
+  Constant,
+  Variable,
+  Random,
+  GameData,
+  Script,
 }
 
 declare const enum Data_ControlVariablesByGameDataOperandType {
-  Item = 0,
-  Weapon = 1,
-  Armor = 2,
-  Actor = 3,
-  Enemy = 4,
-  Character = 5,
-  Party = 6,
-  Other = 7,
+  Item,
+  Weapon,
+  Armor,
+  Actor,
+  Enemy,
+  Character,
+  Party,
+  Other,
 }
 
 declare const enum Data_ControlVariablesByGameDataCharacterOperand {
-  MapX = 0,
-  MapY = 1,
-  Direction = 2,
-  ScreenX = 3,
-  ScreenY = 4,
+  MapX,
+  MapY,
+  Direction,
+  ScreenX,
+  ScreenY,
 }
 
 declare const enum Data_ControlVariablesByGameDataOtherOperand {
-  MapId = 0,
-  PartyMembers = 1,
-  Gold = 2,
-  Steps = 3,
-  PlayTime = 4,
-  Timer = 5,
-  SaveCount = 6,
-  BattleCount = 7,
-  WinCount = 8,
-  EscapeCount = 9,
+  MapId,
+  PartyMembers,
+  Gold,
+  Steps,
+  PlayTime,
+  Timer,
+  SaveCount,
+  BattleCount,
+  WinCount,
+  EscapeCount,
 }
 
-declare type Data_ControlVariablesByGameDataOperand =
-  | ([gameDataOperand: number, param1: unknown, param2?: unknown] &
-      [
+declare type Data_ControlVariablesByGameDataOperand = [
+  gameDataOperand: number,
+  param1: unknown,
+  param2?: unknown,
+] &
+  (
+    | [
         gameDataOperand: Data_ControlVariablesByGameDataOperandType.Item,
         itemId: number,
-      ])
-  | [
-      gameDataOperand: Data_ControlVariablesByGameDataOperandType.Weapon,
-      weaponId: number,
-    ]
-  | [
-      gameDataOperand: Data_ControlVariablesByGameDataOperandType.Armor,
-      armorId: number,
-    ]
-  | [
-      gameDataOperand: Data_ControlVariablesByGameDataOperandType.Actor,
-      actorId: number,
-      actorOperand: number, //TODO Data_ControlVariablesComparatorGameDataActorOperandType
-    ]
-  | [
-      gameDataOperand: Data_ControlVariablesByGameDataOperandType.Enemy,
-      enemyId: number,
-      enemyOperand: number, //TODO Data_ControlVariablesComparatorGameDataEnemyOperandType
-    ]
-  | [
-      gameDataOperand: Data_ControlVariablesByGameDataOperandType.Character,
-      characterId: number,
-      characterOperand: Data_ControlVariablesByGameDataCharacterOperand,
-    ]
-  | [
-      gameDataOperand: Data_ControlVariablesByGameDataOperandType.Party,
-      memberId: number,
-    ]
-  | [
-      gameDataOperand: Data_ControlVariablesByGameDataOperandType.Other,
-      otherOperand: Data_ControlVariablesByGameDataOtherOperand,
-    ];
+      ]
+    | [
+        gameDataOperand: Data_ControlVariablesByGameDataOperandType.Weapon,
+        weaponId: number,
+      ]
+    | [
+        gameDataOperand: Data_ControlVariablesByGameDataOperandType.Armor,
+        armorId: number,
+      ]
+    | [
+        gameDataOperand: Data_ControlVariablesByGameDataOperandType.Actor,
+        actorId: number,
+        actorOperand: number, //TODO Data_ControlVariablesComparatorGameDataActorOperandType
+      ]
+    | [
+        gameDataOperand: Data_ControlVariablesByGameDataOperandType.Enemy,
+        enemyId: number,
+        enemyOperand: number, //TODO Data_ControlVariablesComparatorGameDataEnemyOperandType
+      ]
+    | [
+        gameDataOperand: Data_ControlVariablesByGameDataOperandType.Character,
+        characterId: number,
+        characterOperand: Data_ControlVariablesByGameDataCharacterOperand,
+      ]
+    | [
+        gameDataOperand: Data_ControlVariablesByGameDataOperandType.Party,
+        memberId: number,
+      ]
+    | [
+        gameDataOperand: Data_ControlVariablesByGameDataOperandType.Other,
+        otherOperand: Data_ControlVariablesByGameDataOtherOperand,
+      ]
+  );
 
-declare type Data_ControlVariablesComparator =
-  | ([operand: number, ...params: unknown[]] &
-      [operand: Data_ControlVariablesOperand.Constant, constant: number])
-  | [operand: Data_ControlVariablesOperand.Variable, variableId: number]
-  | [
-      operand: Data_ControlVariablesOperand.Random,
-      ...randomRange: [number, number],
-    ]
-  | [
-      operand: Data_ControlVariablesOperand.GameData,
-      gameDataOperand: Data_ControlVariablesByGameDataOperand,
-    ];
+declare type Data_ControlVariablesComparator = [
+  operand: number,
+  ...params: unknown[],
+] &
+  (
+    | [operand: Data_ControlVariablesOperand.Constant, constant: number]
+    | [operand: Data_ControlVariablesOperand.Variable, variableId: number]
+    | [
+        operand: Data_ControlVariablesOperand.Random,
+        ...randomRange: [number, number],
+      ]
+    | [
+        operand: Data_ControlVariablesOperand.GameData,
+        gameDataOperand: Data_ControlVariablesByGameDataOperand,
+      ]
+  );
 
 declare type Data_ControlVariablesParameters = [
   ...range: [number, number],
@@ -426,29 +447,34 @@ declare type Data_ControlVariablesParameters = [
 ];
 
 declare const enum Data_ControlTimerCommand {
-  Start = 0,
-  Stop = 1,
+  Start,
+  Stop,
 }
 
-declare type Data_ControlTimerParameters =
-  | ([command: number, otherParam?: unknown] &
-      [command: Data_ControlTimerCommand.Start, seconds: number])
-  | [command: Data_ControlTimerCommand.Stop];
+declare type Data_ControlTimerParameters = [
+  command: number,
+  otherParam?: unknown,
+] &
+  (
+    | [command: Data_ControlTimerCommand.Start, seconds: number]
+    | [command: Data_ControlTimerCommand.Stop]
+  );
 
 declare const enum Data_OperateValueOperation {
-  Add = 0,
-  Subtract = 1,
+  Add,
+  Subtract,
 }
 
 declare const enum Data_OperateValueOperandType {
-  Constant = 0,
-  Variable = 1,
+  Constant,
+  Variable,
 }
 
-declare type Data_OperateValueOperand =
-  | ([operandType: number, value: unknown] &
-      [operandType: Data_OperateValueOperandType.Constant, value: number])
-  | [operandType: Data_OperateValueOperandType.Variable, variable: number];
+declare type Data_OperateValueOperand = [operandType: number, value: unknown] &
+  (
+    | [operandType: Data_OperateValueOperandType.Constant, value: number]
+    | [operandType: Data_OperateValueOperandType.Variable, variable: number]
+  );
 
 declare type Data_OperateValueParameters = [
   operation: Data_OperateValueOperation,
@@ -456,27 +482,32 @@ declare type Data_OperateValueParameters = [
 ];
 
 declare const enum Data_ChangePartyMemberOperation {
-  Add = 0,
-  Remove = 1,
+  Add,
+  Remove,
 }
 
-declare type Data_ChangePartyMemberParameters =
-  | ([actorId: number, operation: number, otherParam?: unknown] &
-      [
+declare type Data_ChangePartyMemberParameters = [
+  actorId: number,
+  operation: number,
+  otherParam?: unknown,
+] &
+  (
+    | [
         actorId: number,
         operation: Data_ChangePartyMemberOperation.Add,
         reinitialize: boolean,
-      ])
-  | [actorId: number, operation: Data_ChangePartyMemberOperation.Remove];
+      ]
+    | [actorId: number, operation: Data_ChangePartyMemberOperation.Remove]
+  );
 
 declare const enum Data_CommandAccess {
-  Disabled = 0,
-  Enabled = 1,
+  Disabled,
+  Enabled,
 }
 
 declare const enum Data_TransferDestinationType {
-  Direct = 0,
-  Variables = 1,
+  Direct,
+  Variables,
 }
 
 declare type Data_TransferParameters = [
@@ -486,83 +517,100 @@ declare type Data_TransferParameters = [
   y: number,
 ];
 
+declare const enum Data_FadeType {
+  Black,
+  White,
+  None,
+}
+
 declare const enum Data_EventTransferDestinationType {
-  Direct = 0,
-  Variables = 1,
-  Swap = 2,
+  Direct,
+  Variables,
+  Swap,
 }
 
 declare const enum Data_PlayerFollowersState {
-  Show = 0,
-  Hide = 1,
+  Show,
+  Hide,
 }
 
-declare type Data_EventTransferParameters =
-  | ([
-      type: Data_EventTransferDestinationType,
-      param1: unknown,
-      param2?: unknown,
-      direction?: number,
-    ] &
-      [
+declare type Data_EventTransferParameters = [
+  type: Data_EventTransferDestinationType,
+  param1: unknown,
+  param2?: unknown,
+  direction?: number,
+] &
+  (
+    | [
         type:
           | Data_EventTransferDestinationType.Direct
           | Data_EventTransferDestinationType.Variables,
         x: number,
         y: number,
-      ])
-  | [
-      type: Data_EventTransferDestinationType.Swap,
-      otherEventId: number,
-      unused?: unknown,
-      direction?: Dir4,
-    ];
+      ]
+    | [
+        type: Data_EventTransferDestinationType.Swap,
+        otherEventId: number,
+        unused?: unknown,
+        direction?: Dir4,
+      ]
+  );
 
 declare const enum Data_PicturePositionDesignationType {
-  Constant = 0,
-  Variable = 1,
+  Constant,
+  Variable,
 }
 
-declare type Data_PicturePositionDesignation =
-  | ([designationType: number, x: unknown, y: unknown] &
-      [
+declare type Data_PicturePositionDesignation = [
+  designationType: number,
+  x: unknown,
+  y: unknown,
+] &
+  (
+    | [
         designationType: Data_PicturePositionDesignationType.Constant,
         x: number,
         y: number,
-      ])
-  | [
-      designationType: Data_PicturePositionDesignationType.Variable,
-      xVariable: number,
-      yVariable: number,
-    ];
+      ]
+    | [
+        designationType: Data_PicturePositionDesignationType.Variable,
+        xVariable: number,
+        yVariable: number,
+      ]
+  );
 
 declare const enum Data_GetLocationInfoDataType {
-  TerrainTag = 0,
-  EventId = 1,
-  TileLayer1 = 2,
-  TileLayer2 = 3,
-  TileLayer3 = 4,
-  TileLayer4 = 5,
+  TerrainTag,
+  EventId,
+  TileLayer1,
+  TileLayer2,
+  TileLayer3,
+  TileLayer4,
   RegionId,
 }
 
 declare const enum Data_GetLocationInfoDesignationType {
-  Constant = 0,
-  Variable = 1,
+  Constant,
+  Variable,
 }
 
-declare type Data_GetLocationInfoDesignation =
-  | ([designationType: number, x: unknown, y: unknown] &
-      [
+declare type Data_GetLocationInfoDesignation = [
+  designationType: number,
+  x: unknown,
+  y: unknown,
+] &
+  (
+    | [
         designationType: Data_GetLocationInfoDesignationType.Constant,
         x: number,
         y: number,
-      ])
-  | [
-      designationType: Data_GetLocationInfoDesignationType.Variable,
-      xVariable: number,
-      yVariable: number,
-    ];
+      ]
+    | [
+        designationType: Data_GetLocationInfoDesignationType.Variable,
+        xVariable: number,
+        yVariable: number,
+      ]
+  );
 
 declare type Data_GetLocationInfoParameters = [
   variableId: number,
@@ -571,39 +619,50 @@ declare type Data_GetLocationInfoParameters = [
 ];
 
 declare const enum Data_BattleProcessingDesignationType {
-  Constant = 0,
-  Variable = 1,
+  Constant,
+  Variable,
 }
 
-declare type Data_BattleProcessingDesignation =
-  | ([designationType: number, troop: unknown] &
-      [
+declare type Data_BattleProcessingDesignation = [
+  designationType: number,
+  troop: unknown,
+] &
+  (
+    | [
         designationType: Data_BattleProcessingDesignationType.Constant,
         troopId: number,
-      ])
-  | [
-      designationType: Data_BattleProcessingDesignationType.Variable,
-      troopVariable: number,
-    ];
+      ]
+    | [
+        designationType: Data_BattleProcessingDesignationType.Variable,
+        troopVariable: number,
+      ]
+  );
 
 declare const enum Data_IterateActorOperandType {
-  Constant = 0,
-  Variable = 1,
+  Constant,
+  Variable,
 }
 
-declare type Data_IterateActorExParameters =
-  | ([operandType: number, actor: unknown] &
-      [operandType: Data_IterateActorOperandType.Constant, actorId: number])
-  | [operandType: Data_IterateActorOperandType.Variable, actorVariable: number];
+declare type Data_IterateActorExParameters = [
+  operandType: number,
+  actor: unknown,
+] &
+  (
+    | [operandType: Data_IterateActorOperandType.Constant, actorId: number]
+    | [
+        operandType: Data_IterateActorOperandType.Variable,
+        actorVariable: number,
+      ]
+  );
 
 declare const enum Data_ChangeStateOperator {
-  AddState = 0,
-  RemoveState = 1,
+  AddState,
+  RemoveState,
 }
 
 declare const enum Data_ChangeSkillOperator {
-  LearnSkill = 0,
-  ForgetSkill = 1,
+  LearnSkill,
+  ForgetSkill,
 }
 
 declare type Data_CommandParameters = {
@@ -689,7 +748,7 @@ declare type Data_CommandParameters = {
   [Data_CommandType.TransferPlayer]: [
     ...transfer: Data_TransferParameters,
     direction: Dir4,
-    fadeType: FadeType,
+    fadeType: Data_FadeType,
   ];
   [Data_CommandType.SetVehicleLocation]: [
     vehicle: Data_VehicleIdOrType,
@@ -899,3 +958,29 @@ declare interface Data_Command<T extends Data_CommandType = Data_CommandType> {
   indent: number;
   parameters: Data_CommandParameters[T];
 }
+
+declare const enum Data_EventWaitMode {
+  Message = "message",
+  Transfer = "transfer",
+  Scroll = "scroll",
+  Route = "route",
+  Animation = "animation",
+  Balloon = "balloon",
+  Gather = "gather",
+  Action = "action",
+  Video = "video",
+  Image = "image",
+}
+
+declare const enum Data_BattlerIteratorType {
+  Enemy,
+  Actor,
+}
+
+// TODO Is it doable somehow? {@link Game_Interpreter}
+// declare type Data_CommandMethod = `command${Data_CommandType}`;
+//
+// declare type Data_HasCommandMethod = {
+//   // [K: Data_CommandMethod]: K;
+//   [K in Data_CommandType as `command${K}`]: () => void;
+// };

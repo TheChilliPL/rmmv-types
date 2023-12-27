@@ -3,6 +3,7 @@
  * required because save data should not include the database object itself.
  */
 declare class Game_Item {
+  constructor(item: Data_Item);
   initialize(item: Data_Item): void;
 
   _dataClass: string;

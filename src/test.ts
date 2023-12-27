@@ -42,6 +42,8 @@ let c: Html5AudioConstructor;
 AudioManager.checkWebAudioError(Html5Audio);
 AudioManager.checkWebAudioError(new WebAudio(""));
 
+let followers = new Game_Followers();
+
 /*
 class Item {}
 class Game_Battler {}
