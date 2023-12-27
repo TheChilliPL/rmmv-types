@@ -69,3 +69,24 @@ function aaaa() {
 function f(data: Data_CommandParameters) {
   let b = data[Data_CommandType.ConditionalBranch];
 }
+
+let int = new Game_Interpreter();
+
+int.gameDataOperand(Data_ControlVariablesByGameDataOperandType.Item, 1);
+int.gameDataOperand(
+  Data_ControlVariablesByGameDataOperandType.Actor,
+  1,
+  Data_ControlVariablesByGameDataActorOperandType.Level,
+);
+int.gameDataOperand(
+  Data_ControlVariablesByGameDataOperandType.Enemy,
+  1,
+  Data_ControlVariablesByGameDataEnemyOperandType.Hp,
+);
+int.gameDataOperand(
+  Data_ControlVariablesByGameDataOperandType.Character,
+  1,
+  Data_ControlVariablesByGameDataCharacterOperandType.MapX,
+);
+
+int.operateVariable(1, Data_ControlVariablesOperationType.Set, 2);

@@ -17,7 +17,7 @@ declare class Game_Event extends Game_Character {
   _originalDirection: Dir4;
   _prelockDirection: Dir4;
   _locked: boolean;
-  _interpreter: Maybe<Game_interpreter>;
+  _interpreter: Maybe<Game_Interpreter>;
 
   override initMembers(): void;
 

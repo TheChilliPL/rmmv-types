@@ -10,7 +10,7 @@ declare const enum Data_CommandType {
    * They're simply a way to comment the event behavior.
    *
    * The engine, after executing this function, leaves all the comments
-   * in the {@link Game_interpreter._comments} array, so the plugins can,
+   * in the {@link Game_Interpreter._comments} array, so the plugins can,
    * for example, read some metadata from it.
    *
    * TODO: Find out why {@link Data_CommandType.CommentTextData} exists.
@@ -340,7 +340,7 @@ declare const enum Data_ControlVariablesOperationType {
   Modulo,
 }
 
-declare const enum Data_ControlVariablesOperand {
+declare const enum Data_ControlVariablesOperandType {
   Constant,
   Variable,
   Random,
@@ -359,7 +359,43 @@ declare const enum Data_ControlVariablesByGameDataOperandType {
   Other,
 }
 
-declare const enum Data_ControlVariablesByGameDataCharacterOperand {
+/**
+ * @see Data_BattlerParams
+ */
+declare const enum Data_ControlVariablesByGameDataActorOperandType {
+  Level,
+  Exp,
+  Hp,
+  Mp,
+  // Parameters
+  Mhp,
+  Mmp,
+  Atk,
+  Def,
+  Mat,
+  Mdf,
+  Agi,
+  Luk,
+}
+
+/**
+ * @see Data_BattlerParams
+ */
+declare const enum Data_ControlVariablesByGameDataEnemyOperandType {
+  Hp,
+  Mp,
+  // Parameters
+  Mhp,
+  Mmp,
+  Atk,
+  Def,
+  Mat,
+  Mdf,
+  Agi,
+  Luk,
+}
+
+declare const enum Data_ControlVariablesByGameDataCharacterOperandType {
   MapX,
   MapY,
   Direction,
@@ -401,17 +437,17 @@ declare type Data_ControlVariablesByGameDataOperand = [
     | [
         gameDataOperand: Data_ControlVariablesByGameDataOperandType.Actor,
         actorId: number,
-        actorOperand: number, //TODO Data_ControlVariablesComparatorGameDataActorOperandType
+        actorOperand: Data_ControlVariablesByGameDataActorOperandType,
       ]
     | [
         gameDataOperand: Data_ControlVariablesByGameDataOperandType.Enemy,
         enemyId: number,
-        enemyOperand: number, //TODO Data_ControlVariablesComparatorGameDataEnemyOperandType
+        enemyOperand: Data_ControlVariablesByGameDataEnemyOperandType,
       ]
     | [
         gameDataOperand: Data_ControlVariablesByGameDataOperandType.Character,
         characterId: number,
-        characterOperand: Data_ControlVariablesByGameDataCharacterOperand,
+        characterOperand: Data_ControlVariablesByGameDataCharacterOperandType,
       ]
     | [
         gameDataOperand: Data_ControlVariablesByGameDataOperandType.Party,
@@ -428,22 +464,23 @@ declare type Data_ControlVariablesComparator = [
   ...params: unknown[],
 ] &
   (
-    | [operand: Data_ControlVariablesOperand.Constant, constant: number]
-    | [operand: Data_ControlVariablesOperand.Variable, variableId: number]
+    | [operand: Data_ControlVariablesOperandType.Constant, constant: number]
+    | [operand: Data_ControlVariablesOperandType.Variable, variableId: number]
     | [
-        operand: Data_ControlVariablesOperand.Random,
+        operand: Data_ControlVariablesOperandType.Random,
         ...randomRange: [number, number],
       ]
     | [
-        operand: Data_ControlVariablesOperand.GameData,
+        operand: Data_ControlVariablesOperandType.GameData,
         gameDataOperand: Data_ControlVariablesByGameDataOperand,
       ]
+    | [operand: Data_ControlVariablesOperandType.Script, script: string]
   );
 
 declare type Data_ControlVariablesParameters = [
   ...range: [number, number],
   operationType: Data_ControlVariablesOperationType,
-  operand: Data_ControlVariablesOperand,
+  ...operand: Data_ControlVariablesComparator,
 ];
 
 declare const enum Data_ControlTimerCommand {
@@ -980,7 +1017,6 @@ declare const enum Data_BattlerIteratorType {
 // TODO Is it doable somehow? {@link Game_Interpreter}
 // declare type Data_CommandMethod = `command${Data_CommandType}`;
 //
-// declare type Data_HasCommandMethod = {
-//   // [K: Data_CommandMethod]: K;
-//   [K in Data_CommandType as `command${K}`]: () => void;
-// };
+declare type Data_HasCommandMethods = {
+  [K in Data_CommandType as `command${K}`]: () => boolean;
+};

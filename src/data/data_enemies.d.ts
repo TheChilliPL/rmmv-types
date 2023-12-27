@@ -25,5 +25,5 @@ declare interface Data_Enemy {
   gold: number;
   name: string;
   note: string;
-  params: Eight<number>;
+  params: Data_BattlerParams;
 }

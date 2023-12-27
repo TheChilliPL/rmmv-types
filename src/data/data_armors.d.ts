@@ -11,6 +11,6 @@ declare interface Data_Armor extends Data_Item {
   iconIndex: number;
   name: string;
   note: string;
-  params: Eight<number>;
+  params: Data_BattlerParams;
   price: number;
 }
