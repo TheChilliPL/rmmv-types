@@ -8,7 +8,7 @@ declare interface Data_EnemyAction {
   skillId: number;
 }
 
-declare interface Data_EnemyDrop {
+declare interface Data_DropItem {
   dataId: number;
   denominator: number;
   kind: number;
@@ -19,7 +19,7 @@ declare interface Data_Enemy {
   actions: Data_EnemyAction[];
   battlerHue: number;
   battlerName: string;
-  dropItems: Data_EnemyDrop[];
+  dropItems: Data_DropItem[];
   exp: number;
   traits: Data_Trait[];
   gold: number;

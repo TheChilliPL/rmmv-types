@@ -6,6 +6,9 @@ declare type SelfSwitchKey = [
   selfSwitchChar: SelfSwitchChar,
 ];
 
+/**
+ * The game object class for self switches.
+ */
 declare class Game_SelfSwitches {
   initialize(): void;
 

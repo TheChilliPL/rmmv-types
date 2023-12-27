@@ -7,7 +7,19 @@ declare interface Data_Vehicle {
   startY: number;
 }
 
-declare type Data_VehicleId = (0 | 1 | 2) | ("boat" | "ship" | "airship");
+declare const enum VehicleId {
+  Boat,
+  Ship,
+  Airship,
+}
+
+declare const enum VehicleType {
+  Boat = "boat",
+  Ship = "ship",
+  Airship = "airship",
+}
+
+declare type VehicleIdOrType = VehicleId | VehicleType;
 
 declare interface Data_AttackMotion {
   type: number;

@@ -5,6 +5,10 @@ declare type Tone = [
   saturation: number,
 ];
 
+/**
+ * The game object class for screen effect data, such as changes in color tone
+ * and flashes.
+ */
 declare class Game_Screen {
   initialize(): void;
 

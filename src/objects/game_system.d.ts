@@ -1,3 +1,6 @@
+/**
+ * The game object class for the system data.
+ */
 declare class Game_System {
   initialize(): void;
 

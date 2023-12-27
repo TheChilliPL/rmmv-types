@@ -86,7 +86,7 @@ declare class BattleManager {
   static clearActor(): void;
   static changeActor(
     newActorIndex: number,
-    lastActorActionState: ActionState
+    lastActorActionState: BattlerActionState
   ): void;
 
   static startBattle(): void;

@@ -12,6 +12,10 @@ declare const enum MessagePositionType {
 
 declare type ChoiceCallback = (choice: number) => void;
 
+/**
+ * The game object class for the state of the message window that displays text
+ * or selections, etc.
+ */
 declare class Game_Message {
   initialize(): void;
   clear(): void;

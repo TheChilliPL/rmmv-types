@@ -6,7 +6,7 @@
 - rpg_managers.js → managers/: 2840/2840
 
 ## WIP
-- rpg_objects.js → objects/: 2083/10641
+- rpg_objects.js → objects/: 6192/10641
   - → data/data_commands.d.ts: n-10357/10641
 
 ## To do

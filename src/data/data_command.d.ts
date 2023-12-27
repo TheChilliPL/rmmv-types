@@ -309,7 +309,7 @@ declare type Data_ConditionalBranchParameters =
     ]
   | [type: Data_ConditionalBranchType.Button, key: Key]
   | [type: Data_ConditionalBranchType.Script, script: string]
-  | [type: Data_ConditionalBranchType.Vehicle, vehicle: Data_VehicleId];
+  | [type: Data_ConditionalBranchType.Vehicle, vehicle: VehicleIdOrType];
 
 declare const enum Data_ControlVariablesOperationType {
   Set = 0,
@@ -686,7 +686,7 @@ declare type Data_CommandParameters = {
   [Data_CommandType.ChangeWindowColor]: [RGBAColor];
 
   [Data_CommandType.ChangeDefeatMe]: [AudioObject];
-  [Data_CommandType.ChangeVehicleBgm]: [Data_VehicleId, AudioObject];
+  [Data_CommandType.ChangeVehicleBgm]: [VehicleIdOrType, AudioObject];
 
   [Data_CommandType.TransferPlayer]: [
     ...transfer: Data_TransferParameters,
@@ -694,7 +694,7 @@ declare type Data_CommandParameters = {
     fadeType: FadeType,
   ];
   [Data_CommandType.SetVehicleLocation]: [
-    vehicle: Data_VehicleId,
+    vehicle: VehicleIdOrType,
     ...transfer: Data_TransferParameters,
   ];
   [Data_CommandType.SetEventLocation]: [
@@ -888,7 +888,7 @@ declare type Data_CommandParameters = {
     battlerName: string,
   ];
   [Data_CommandType.ChangeVehicleImage]: [
-    vehicleId: Data_VehicleId,
+    vehicleId: VehicleIdOrType,
     characterName: string,
     characterIndex: number,
   ];

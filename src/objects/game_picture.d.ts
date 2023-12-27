@@ -1,3 +1,6 @@
+/**
+ * The game object class for a picture.
+ */
 declare class Game_Picture {
   initialize(): void;
 
@@ -46,7 +49,7 @@ declare class Game_Picture {
     scaleX: number,
     scaleY: number,
     opacity: number,
-    blendMode: PIXI.BLEND_MODES
+    blendMode: PIXI.BLEND_MODES,
   ): void;
   move(
     origin: number,
@@ -56,7 +59,7 @@ declare class Game_Picture {
     scaleY: number,
     opacity: number,
     blendMode: PIXI.BLEND_MODES,
-    duration: number
+    duration: number,
   ): void;
   rotate(speed: number): void;
   tint(tone: Tone, duration: number): void;

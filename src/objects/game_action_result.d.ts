@@ -1,3 +1,7 @@
+/**
+ * The game object class for a result of a battle action. For convinience, all
+ * member variables in this class are public.
+ */
 declare class Game_ActionResult {
   initialize(): void;
 

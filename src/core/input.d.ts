@@ -12,17 +12,17 @@ declare type Key =
 
 declare const enum Dir4 {
   None = 0,
-  Up = 8,
-  Right = 6,
   Down = 2,
   Left = 4,
+  Right = 6,
+  Up = 8,
 }
 
 declare const enum Diagonals {
-  UpRight = 9,
-  DownRight = 3,
   DownLeft = 1,
+  DownRight = 3,
   UpLeft = 7,
+  UpRight = 9,
 }
 
 declare type Dir8 = Dir4 | Diagonals;

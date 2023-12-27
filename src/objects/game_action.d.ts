@@ -1,6 +1,9 @@
+/**
+ * The game object class for a battle action.
+ */
 declare class Game_Action {
   // Consts
-  // TODO Find a better way to do this
+  // TODO Find a better way to do this
   static EFFECT_RECOVER_HP: 11;
   static EFFECT_RECOVER_MP: 12;
   static EFFECT_GAIN_TP: 13;
@@ -29,7 +32,7 @@ declare class Game_Action {
   opponentsUnit(): Game_Unit;
 
   setEnemyAction(
-    action: Data_Action // ? TODO
+    action: Data_Action, // ? TODO
   ): void;
 
   setAttack(): void;

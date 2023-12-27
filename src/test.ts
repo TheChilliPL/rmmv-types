@@ -10,8 +10,9 @@ interface Haha {
   new (a: number): XD;
 }
 
-let ua: Data_UsableItem;
-ua.
+function test(battler: Game_BattlerBase) {}
+
+let effect = BattlerEffectType.Whiten;
 
 let haha: Haha = LOL;
 
@@ -28,9 +29,6 @@ let c: Html5AudioConstructor;
 
 AudioManager.checkWebAudioError(Html5Audio);
 AudioManager.checkWebAudioError(new WebAudio(""));
-
-let vrun: EffectType = EffectType.RecoverHp;
-vrun = 112;
 
 /*
 class Item {}

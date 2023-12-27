@@ -3,10 +3,16 @@ declare interface DatabaseFile {
   src: string;
 }
 
+declare type SavefileCharacter = [
+  characterName: string,
+  characterIndex: number,
+];
+
+declare type SavefileFace = [faceName: string, faceIndex: number];
+
 declare interface GlobalInfo {
   globalId: string;
   title: string;
-  // TODO
   characters: SavefileCharacter[];
   faces: SavefileFace[];
   playtime: string;

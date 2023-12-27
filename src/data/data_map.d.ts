@@ -1,3 +1,9 @@
+declare interface Data_Encounter {
+  troopId: number;
+  weight: number;
+  regionSet: number[];
+}
+
 declare interface Data_Map {
   autoplayBgm: boolean;
   autoplayBgs: boolean;
@@ -7,7 +13,7 @@ declare interface Data_Map {
   bgs: AudioObject;
   disableDashing: boolean;
   displayName: string;
-  encounterList: unknown[]; //TODO
+  encounterList: Data_Encounter[];
   encounterStep: number;
   height: number;
   note: string;
@@ -22,5 +28,5 @@ declare interface Data_Map {
   tilesetId: number;
   width: number;
   data: number[];
-  events: OneIndexedArray<Data_Event>;
+  events: OneIndexedArray<Maybe<Data_Event>>;
 }

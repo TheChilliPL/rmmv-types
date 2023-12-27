@@ -1,3 +1,7 @@
+/**
+ * The game object class for handling skills, items, weapons, and armor. It is
+ * required because save data should not include the database object itself.
+ */
 declare class Game_Item {
   initialize(item: Data_Item): void;
 

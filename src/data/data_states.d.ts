@@ -6,9 +6,13 @@ declare interface Data_State {
   chanceByDamage: number;
   iconIndex: number;
   maxTurns: number;
+  /** Message displayed when an actor is inflicted with the state. */
   message1: string;
+  /** Message displayed when an enemy is inflicted with the state. */
   message2: string;
+  /** Message displayed if the state persists. */
   message3: string;
+  /** Message displayed when the state is removed. */
   message4: string;
   minTurns: number;
   motion: number; //TODO

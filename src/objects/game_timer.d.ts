@@ -1,3 +1,6 @@
+/**
+ * The game object class for the timer.
+ */
 declare class Game_Timer {
   initialize(): void;
 

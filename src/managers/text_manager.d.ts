@@ -157,178 +157,178 @@ declare class TextManager {
   ): { get: () => string; configurable: boolean };
 
   /** Gets the currency unit. */
-  static readonly currencyUnit: string;
+  static get currencyUnit(): string;
 
   /** Gets the {@link BasicTerm.Level} string. */
-  static readonly level: string;
+  static get level(): string;
   /** Gets the {@link BasicTerm.LevelA} string. */
-  static readonly levelA: string;
+  static get levelA(): string;
   /** Gets the {@link BasicTerm.Hp} string. */
-  static readonly hp: string;
+  static get hp(): string;
   /** Gets the {@link BasicTerm.HpA} string. */
-  static readonly hpA: string;
+  static get hpA(): string;
   /** Gets the {@link BasicTerm.Mp} string. */
-  static readonly mp: string;
+  static get mp(): string;
   /** Gets the {@link BasicTerm.MpA} string. */
-  static readonly mpA: string;
+  static get mpA(): string;
   /** Gets the {@link BasicTerm.Tp} string. */
-  static readonly tp: string;
+  static get tp(): string;
   /** Gets the {@link BasicTerm.TpA} string. */
-  static readonly tpA: string;
+  static get tpA(): string;
   /** Gets the {@link BasicTerm.Exp} string. */
-  static readonly exp: string;
+  static get exp(): string;
   /** Gets the {@link BasicTerm.ExpA} string. */
-  static readonly expA: string;
+  static get expA(): string;
 
   /** Gets the {@link CommandTerm.Fight} string. */
-  static readonly fight: string;
+  static get fight(): string;
   /** Gets the {@link CommandTerm.Escape} string. */
-  static readonly escape: string;
+  static get escape(): string;
   /** Gets the {@link CommandTerm.Attack} string. */
-  static readonly attack: string;
+  static get attack(): string;
   /** Gets the {@link CommandTerm.Guard} string. */
-  static readonly guard: string;
+  static get guard(): string;
   /** Gets the {@link CommandTerm.Item} string. */
-  static readonly item: string;
+  static get item(): string;
   /** Gets the {@link CommandTerm.Skill} string. */
-  static readonly skill: string;
+  static get skill(): string;
   /** Gets the {@link CommandTerm.Equip} string. */
-  static readonly equip: string;
+  static get equip(): string;
   /** Gets the {@link CommandTerm.Status} string. */
-  static readonly status: string;
+  static get status(): string;
   /** Gets the {@link CommandTerm.Formation} string. */
-  static readonly formation: string;
+  static get formation(): string;
   /** Gets the {@link CommandTerm.Save} string. */
-  static readonly save: string;
+  static get save(): string;
   /** Gets the {@link CommandTerm.GameEnd} string. */
-  static readonly gameEnd: string;
+  static get gameEnd(): string;
   /** Gets the {@link CommandTerm.Options} string. */
-  static readonly options: string;
+  static get options(): string;
   /** Gets the {@link CommandTerm.Weapon} string. */
-  static readonly weapon: string;
+  static get weapon(): string;
   /** Gets the {@link CommandTerm.Armor} string. */
-  static readonly armor: string;
+  static get armor(): string;
   /** Gets the {@link CommandTerm.KeyItem} string. */
-  static readonly keyItem: string;
+  static get keyItem(): string;
   /** Gets the {@link CommandTerm.Equip2} string. */
-  static readonly equip2: string;
+  static get equip2(): string;
   /** Gets the {@link CommandTerm.Optimize} string. */
-  static readonly optimize: string;
+  static get optimize(): string;
   /** Gets the {@link CommandTerm.Clear} string. */
-  static readonly clear: string;
+  static get clear(): string;
   /** Gets the {@link CommandTerm.NewGame} string. */
-  static readonly newGame: string;
+  static get newGame(): string;
   /** Gets the {@link CommandTerm.Continue} string. */
-  static readonly continue: string;
+  static get continue(): string;
   /** Gets the {@link CommandTerm.ToTitle} string. */
-  static readonly toTitle: string;
+  static get toTitle(): string;
   /** Gets the {@link CommandTerm.Cancel} string. */
-  static readonly cancel: string;
+  static get cancel(): string;
   /** Gets the {@link CommandTerm.Buy} string. */
-  static readonly buy: string;
+  static get buy(): string;
   /** Gets the {@link CommandTerm.Sell} string. */
-  static readonly sell: string;
+  static get sell(): string;
 
   /** Gets the {@link MessageTerm.AlwaysDash} string. */
-  static readonly alwaysDash: string;
+  static get alwaysDash(): string;
   /** Gets the {@link MessageTerm.CommandRemember} string. */
-  static readonly commandRemember: string;
+  static get commandRemember(): string;
   /** Gets the {@link MessageTerm.BgmVolume} string. */
-  static readonly bgmVolume: string;
+  static get bgmVolume(): string;
   /** Gets the {@link MessageTerm.BgsVolume} string. */
-  static readonly bgsVolume: string;
+  static get bgsVolume(): string;
   /** Gets the {@link MessageTerm.MeVolume} string. */
-  static readonly meVolume: string;
+  static get meVolume(): string;
   /** Gets the {@link MessageTerm.SeVolume} string. */
-  static readonly seVolume: string;
+  static get seVolume(): string;
   /** Gets the {@link MessageTerm.Possession} string. */
-  static readonly possession: string;
+  static get possession(): string;
   /** Gets the {@link MessageTerm.ExpTotal} string. */
-  static readonly expTotal: string;
+  static get expTotal(): string;
   /** Gets the {@link MessageTerm.ExpNext} string. */
-  static readonly expNext: string;
+  static get expNext(): string;
   /** Gets the {@link MessageTerm.SaveMessage} string. */
-  static readonly saveMessage: string;
+  static get saveMessage(): string;
   /** Gets the {@link MessageTerm.LoadMessage} string. */
-  static readonly loadMessage: string;
+  static get loadMessage(): string;
   /** Gets the {@link MessageTerm.File} string. */
-  static readonly file: string;
+  static get file(): string;
   /** Gets the {@link MessageTerm.PartyName} string. */
-  static readonly partyName: string;
+  static get partyName(): string;
   /** Gets the {@link MessageTerm.Emerge} string. */
-  static readonly emerge: string;
+  static get emerge(): string;
   /** Gets the {@link MessageTerm.Preemptive} string. */
-  static readonly preemptive: string;
+  static get preemptive(): string;
   /** Gets the {@link MessageTerm.Surprise} string. */
-  static readonly surprise: string;
+  static get surprise(): string;
   /** Gets the {@link MessageTerm.EscapeStart} string. */
-  static readonly escapeStart: string;
+  static get escapeStart(): string;
   /** Gets the {@link MessageTerm.EscapeFailure} string. */
-  static readonly escapeFailure: string;
+  static get escapeFailure(): string;
   /** Gets the {@link MessageTerm.Victory} string. */
-  static readonly victory: string;
+  static get victory(): string;
   /** Gets the {@link MessageTerm.Defeat} string. */
-  static readonly defeat: string;
+  static get defeat(): string;
   /** Gets the {@link MessageTerm.ObtainExp} string. */
-  static readonly obtainExp: string;
+  static get obtainExp(): string;
   /** Gets the {@link MessageTerm.ObtainGold} string. */
-  static readonly obtainGold: string;
+  static get obtainGold(): string;
   /** Gets the {@link MessageTerm.ObtainItem} string. */
-  static readonly obtainItem: string;
+  static get obtainItem(): string;
   /** Gets the {@link MessageTerm.LevelUp} string. */
-  static readonly levelUp: string;
+  static get levelUp(): string;
   /** Gets the {@link MessageTerm.ObtainSkill} string. */
-  static readonly obtainSkill: string;
+  static get obtainSkill(): string;
   /** Gets the {@link MessageTerm.UseItem} string. */
-  static readonly useItem: string;
+  static get useItem(): string;
   /** Gets the {@link MessageTerm.CriticalToEnemy} string. */
-  static readonly criticalToEnemy: string;
+  static get criticalToEnemy(): string;
   /** Gets the {@link MessageTerm.CriticalToActor} string. */
-  static readonly criticalToActor: string;
+  static get criticalToActor(): string;
   /** Gets the {@link MessageTerm.ActorDamage} string. */
-  static readonly actorDamage: string;
+  static get actorDamage(): string;
   /** Gets the {@link MessageTerm.ActorRecovery} string. */
-  static readonly actorRecovery: string;
+  static get actorRecovery(): string;
   /** Gets the {@link MessageTerm.ActorGain} string. */
-  static readonly actorGain: string;
+  static get actorGain(): string;
   /** Gets the {@link MessageTerm.ActorLoss} string. */
-  static readonly actorLoss: string;
+  static get actorLoss(): string;
   /** Gets the {@link MessageTerm.ActorDrain} string. */
-  static readonly actorDrain: string;
+  static get actorDrain(): string;
   /** Gets the {@link MessageTerm.ActorNoDamage} string. */
-  static readonly actorNoDamage: string;
+  static get actorNoDamage(): string;
   /** Gets the {@link MessageTerm.ActorNoHit} string. */
-  static readonly actorNoHit: string;
+  static get actorNoHit(): string;
   /** Gets the {@link MessageTerm.EnemyDamage} string. */
-  static readonly enemyDamage: string;
+  static get enemyDamage(): string;
   /** Gets the {@link MessageTerm.EnemyRecovery} string. */
-  static readonly enemyRecovery: string;
+  static get enemyRecovery(): string;
   /** Gets the {@link MessageTerm.EnemyGain} string. */
-  static readonly enemyGain: string;
+  static get enemyGain(): string;
   /** Gets the {@link MessageTerm.EnemyLoss} string. */
-  static readonly enemyLoss: string;
+  static get enemyLoss(): string;
   /** Gets the {@link MessageTerm.EnemyDrain} string. */
-  static readonly enemyDrain: string;
+  static get enemyDrain(): string;
   /** Gets the {@link MessageTerm.EnemyNoDamage} string. */
-  static readonly enemyNoDamage: string;
+  static get enemyNoDamage(): string;
   /** Gets the {@link MessageTerm.EnemyNoHit} string. */
-  static readonly enemyNoHit: string;
+  static get enemyNoHit(): string;
   /** Gets the {@link MessageTerm.Evasion} string. */
-  static readonly evasion: string;
+  static get evasion(): string;
   /** Gets the {@link MessageTerm.MagicEvasion} string. */
-  static readonly magicEvasion: string;
+  static get magicEvasion(): string;
   /** Gets the {@link MessageTerm.MagicReflection} string. */
-  static readonly magicReflection: string;
+  static get magicReflection(): string;
   /** Gets the {@link MessageTerm.CounterAttack} string. */
-  static readonly counterAttack: string;
+  static get counterAttack(): string;
   /** Gets the {@link MessageTerm.Substitute} string. */
-  static readonly substitute: string;
+  static get substitute(): string;
   /** Gets the {@link MessageTerm.BuffAdd} string. */
-  static readonly buffAdd: string;
+  static get buffAdd(): string;
   /** Gets the {@link MessageTerm.DebuffAdd} string. */
-  static readonly debuffAdd: string;
+  static get debuffAdd(): string;
   /** Gets the {@link MessageTerm.BuffRemove} string. */
-  static readonly buffRemove: string;
+  static get buffRemove(): string;
   /** Gets the {@link MessageTerm.ActionFailure} string. */
-  static readonly actionFailure: string;
+  static get actionFailure(): string;
 }

@@ -1,3 +1,6 @@
+/**
+ * The game object class for variables.
+ */
 declare class Game_Variables {
   initialize(): void;
 
