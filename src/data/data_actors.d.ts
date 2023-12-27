@@ -6,7 +6,13 @@ declare interface Data_Actor {
   characterIndex: number;
   characterName: string;
   classId: number;
-  equips: Five<number>;
+  equips: [
+    weapon: number,
+    shield: number,
+    head: number,
+    body: number,
+    accessory: number,
+  ];
   faceIndex: number;
   faceName: string;
   traits: Data_Trait[];

@@ -3,24 +3,23 @@
  */
 declare class Game_Action {
   // Consts
-  // TODO Find a better way to do this
-  static EFFECT_RECOVER_HP: 11;
-  static EFFECT_RECOVER_MP: 12;
-  static EFFECT_GAIN_TP: 13;
-  static EFFECT_ADD_STATE: 21;
-  static EFFECT_REMOVE_STATE: 22;
-  static EFFECT_ADD_BUFF: 31;
-  static EFFECT_ADD_DEBUFF: 32;
-  static EFFECT_REMOVE_BUFF: 33;
-  static EFFECT_REMOVE_DEBUFF: 34;
-  static EFFECT_SPECIAL: 41;
-  static EFFECT_GROW: 42;
-  static EFFECT_LEARN_SKILL: 43;
-  static EFFECT_COMMON_EVENT: 44;
-  static SPECIAL_EFFECT_ESCAPE: 0;
-  static HITTYPE_CERTAIN: 0;
-  static HITTYPE_PHYSICAL: 1;
-  static HITTYPE_MAGICAL: 2;
+  static EFFECT_RECOVER_HP: Data_EffectType.RecoverHP;
+  static EFFECT_RECOVER_MP: Data_EffectType.RecoverMP;
+  static EFFECT_GAIN_TP: Data_EffectType.GainTP;
+  static EFFECT_ADD_STATE: Data_EffectType.AddState;
+  static EFFECT_REMOVE_STATE: Data_EffectType.RemoveState;
+  static EFFECT_ADD_BUFF: Data_EffectType.AddBuff;
+  static EFFECT_ADD_DEBUFF: Data_EffectType.AddDebuff;
+  static EFFECT_REMOVE_BUFF: Data_EffectType.RemoveBuff;
+  static EFFECT_REMOVE_DEBUFF: Data_EffectType.RemoveDebuff;
+  static EFFECT_SPECIAL: Data_EffectType.Special;
+  static EFFECT_GROW: Data_EffectType.Grow;
+  static EFFECT_LEARN_SKILL: Data_EffectType.LearnSkill;
+  static EFFECT_COMMON_EVENT: Data_EffectType.CommonEvent;
+  static SPECIAL_EFFECT_ESCAPE: Data_EffectType.SpecialEscape;
+  static HITTYPE_CERTAIN: Data_HitType.CertainHit;
+  static HITTYPE_PHYSICAL: Data_HitType.PhysicalAttack;
+  static HITTYPE_MAGICAL: Data_HitType.MagicalAttack;
 
   initialize(subject: Game_Battler, forcing: boolean = false): void;
 
@@ -48,7 +47,7 @@ declare class Game_Action {
 
   numRepeats(): number;
 
-  checkItemScope(list: ItemScope[]): boolean;
+  checkItemScope(list: Data_ItemScope[]): boolean;
   isForOpponent(): boolean;
   isForFriend(): boolean;
   isForDeadFriend(): boolean;
@@ -60,7 +59,7 @@ declare class Game_Action {
   needsSelection(): boolean;
   numTargets(): number;
 
-  checkDamageType(list: DamageType[]): boolean;
+  checkDamageType(list: Data_DamageType[]): boolean;
   isHpEffect(): boolean;
   isMpEffect(): boolean;
   isDamage(): boolean;
@@ -99,7 +98,7 @@ declare class Game_Action {
   hasItemAnyValidEffects(target: Game_Battler): boolean;
   testItemEffect(target: Game_Battler, effect: Data_Effect): boolean; // ?
 
-  // TODO Add documentation
+  // TODO Add documentation
   itemCnt(target: Game_Battler): number;
   itemMrf(target: Game_Battler): number;
   itemHit(target: Game_Battler): number;

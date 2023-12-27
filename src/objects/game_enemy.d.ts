@@ -21,7 +21,7 @@ declare class Game_Enemy extends Game_Battler {
   isBattleMember(): boolean;
   enemyId(): number;
   enemy(): Data_Enemy;
-  traitObjects(): BattlerTraitObject[];
+  traitObjects(): Data_TraitObject[];
 
   paramBase(paramId: number): number;
   exp(): number;

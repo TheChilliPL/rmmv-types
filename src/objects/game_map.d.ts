@@ -2,7 +2,7 @@
  * The game object class for a map. It contains scrolling and passage
  * determination functions.
  */
-declare class Data_Map {
+declare class Game_Map {
   initialize(): void;
 
   _interpreter: Game_Interpreter;
@@ -51,7 +51,7 @@ declare class Data_Map {
   /** Typo in the source code. Should be `refreshVehicles`. */
   refereshVehicles(): void;
   vehicles(): Game_Vehicle[];
-  vehicle(type: VehicleIdOrType): Game_Vehicle;
+  vehicle(type: Data_VehicleIdOrType): Game_Vehicle;
   boat(): Game_Vehicle;
   ship(): Game_Vehicle;
   airship(): Game_Vehicle;

@@ -1,6 +1,6 @@
 declare type Data_Items = OneIndexedArray<Data_NormalItem>;
 
-declare const enum DamageType {
+declare const enum Data_DamageType {
   HPDamage,
   MPDamage,
   HPRecover,
@@ -13,15 +13,38 @@ declare interface Data_Damage {
   critical: boolean;
   elementId: number;
   formula: string;
-  type: DamageType;
+  type: Data_DamageType;
   variance: number;
 }
 
+declare const enum Data_EffectType {
+  RecoverHP = 11,
+  RecoverMP,
+  GainTP,
+  AddState = 21,
+  RemoveState,
+  AddBuff = 31,
+  AddDebuff,
+  RemoveBuff,
+  RemoveDebuff,
+  Special = 41,
+  Grow,
+  LearnSkill,
+  CommonEvent,
+  SpecialEscape = 0,
+}
+
 declare interface Data_Effect {
-  code: number; // Game_Action.EFFECT_*
+  code: Data_EffectType;
   dataId: number;
   value1: number;
   value2: number;
+}
+
+declare const enum Data_HitType {
+  CertainHit,
+  PhysicalAttack,
+  MagicalAttack,
 }
 
 declare const enum Data_ItemType {
@@ -31,7 +54,7 @@ declare const enum Data_ItemType {
   HiddenB,
 }
 
-declare const enum ItemScope {
+declare const enum Data_ItemScope {
   None,
   OneEnemy,
   AllEnemies,
@@ -64,7 +87,7 @@ declare interface Data_NormalItem extends Data_Item {
   damage: Data_Damage;
   description: string;
   effects: Data_Effect[];
-  hitType: number;
+  hitType: Data_HitType;
   iconIndex: number;
   itypeId: Data_ItemType;
   name: string;
@@ -72,7 +95,7 @@ declare interface Data_NormalItem extends Data_Item {
   occasion: number;
   price: number;
   repeats: number;
-  scope: ItemScope;
+  scope: Data_ItemScope;
   speed: number;
   successRate: number;
   tpGain: number;

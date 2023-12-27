@@ -7,23 +7,29 @@ declare interface Data_Vehicle {
   startY: number;
 }
 
-declare const enum VehicleId {
+declare const enum Data_VehicleId {
   Boat,
   Ship,
   Airship,
 }
 
-declare const enum VehicleType {
+declare const enum Data_VehicleType {
   Boat = "boat",
   Ship = "ship",
   Airship = "airship",
 }
 
-declare type VehicleIdOrType = VehicleId | VehicleType;
+declare type Data_VehicleIdOrType = Data_VehicleId | Data_VehicleType;
 
 declare interface Data_AttackMotion {
   type: number;
   weaponImageId: number;
+}
+
+declare interface Data_TestBattler {
+  actorId: number;
+  equips: Five<number>;
+  level: number;
 }
 
 declare interface Data_System {
@@ -45,7 +51,14 @@ declare interface Data_System {
   gameoverMe: AudioObject;
   locale: string;
   magicSkills: number[];
-  menuCommands: Six<boolean>;
+  menuCommands: [
+    item: boolean,
+    skill: boolean,
+    equip: boolean,
+    status: boolean,
+    formation: boolean,
+    save: boolean,
+  ];
   optDisplayTp: boolean;
   optDrawTitle: boolean;
   optExtraExp: boolean;
@@ -63,16 +76,61 @@ declare interface Data_System {
   startY: number;
   switches: string[];
   terms: {
-    basic: string[];
-    commands: (string | null)[];
-    params: string[];
+    basic: [
+      level: string,
+      levelAbbr: string,
+      hp: string,
+      hpAbbr: string,
+      mp: string,
+      mpAbbr: string,
+      tp: string,
+      tpAbbr: string,
+      exp: string,
+      expAbbr: string,
+    ];
+    commands: [
+      fight: string,
+      escape: string,
+      attack: string,
+      guard: string,
+      item: string,
+      skill: string,
+      equip: string,
+      status: string,
+      formation: string,
+      save: string,
+      gameEnd: string,
+      options: string,
+      weapon: string,
+      armor: string,
+      keyItem: string,
+      equip2: string,
+      optimize: string,
+      clear: string,
+      newGame: string,
+      continue_: string,
+      null,
+      toTitle: string,
+      cancel: string,
+      null,
+      buy: string,
+      sell: string,
+    ];
+    params: [
+      mhp: string,
+      mmp: string,
+      atk: string,
+      def: string,
+      mat: string,
+      mdf: string,
+      agi: string,
+      luk: string,
+      hit: string,
+      eva: string,
+    ];
     messages: { [key in MessageTerm]: string };
   };
-  testBattlers: {
-    actorId: number;
-    equips: Five<number>;
-    level: number;
-  }[];
+  testBattlers: Data_TestBattler[];
   testTroopId: number;
   title1Name: string;
   title2Name: string;

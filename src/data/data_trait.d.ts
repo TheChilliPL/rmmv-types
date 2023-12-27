@@ -1,11 +1,11 @@
-declare const enum TraitType {
+declare const enum Data_TraitType {
   ElementRate = 11,
   DebuffRate,
   StateRate,
   StateResist,
   Param = 21,
-  Xparam,
-  Sparam,
+  XParam,
+  SParam,
   AttackElement = 31,
   AttackState,
   AttackSpeed,
@@ -25,7 +25,7 @@ declare const enum TraitType {
   PartyAbility,
 }
 
-declare const enum TraitFlag {
+declare const enum Data_TraitFlag {
   AutoBattle,
   Guard,
   Substitute,
@@ -36,4 +36,8 @@ declare interface Data_Trait {
   code: number;
   dataId: number;
   value: number;
+}
+
+declare interface Data_TraitObject {
+  traits: Data_Trait[];
 }

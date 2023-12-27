@@ -1,9 +1,3 @@
-declare interface Data_Command<T extends Data_CommandType = Data_CommandType> {
-  code: T;
-  indent: number;
-  parameters: Data_CommandParameters[T];
-}
-
 declare const enum Data_CommandType {
   ShowText = 101,
   ShowChoices = 102,
@@ -11,6 +5,16 @@ declare const enum Data_CommandType {
   SelectItem = 104,
   ShowScrollingText = 105,
 
+  /**
+   * The game itself doesn't do anything much with comments.
+   * They're simply a way to comment the event behavior.
+   *
+   * The engine, after executing this function, leaves all the comments
+   * in the {@link Game_Interpreter._comments} array, so the plugins can,
+   * for example, read some metadata from it.
+   *
+   * TODO: Find out why {@link Data_CommandType.CommentTextData} exists.
+   */
   Comment = 108,
 
   ConditionalBranch = 111,
@@ -257,59 +261,63 @@ declare const enum Data_ConditionalBranchGoldComparator {
   Less,
 }
 
-declare type Data_ConditionalBranchParameters =
-  | ([type: number, ...params: unknown[]] &
-      [
+declare type Data_ConditionalBranchParameters = [
+  type: number,
+  ...params: unknown[],
+] &
+  (
+    | [
         type: Data_ConditionalBranchType.Switch,
         switchId: number,
         state: Data_CommandSwitchState,
-      ])
-  | [
-      type: Data_ConditionalBranchType.Variable,
-      variableId: number,
-      ...compareTo: Data_ConditionalBranchVariableOperand,
-      comparator: Data_ConditionalBranchVariableComparator,
-    ]
-  | [
-      type: Data_ConditionalBranchType.SelfSwitch,
-      selfSwitchCh: string, //TODO
-      state: Data_CommandSwitchState,
-    ]
-  | [
-      type: Data_ConditionalBranchType.Timer,
-      seconds: number,
-      comparator: Data_ConditionalBranchTimerComparator,
-    ]
-  | [
-      type: Data_ConditionalBranchType.Actor,
-      actorId: number,
-      ...condition: Data_ConditionalBranchActorCondition,
-    ]
-  | [
-      type: Data_ConditionalBranchType.Enemy,
-      enemyId: number,
-      ...condition: Data_ConditionalBranchEnemyCondition,
-    ]
-  | [type: Data_ConditionalBranchType.Character, direction: Dir4]
-  | [
-      type: Data_ConditionalBranchType.Gold,
-      amount: number,
-      comparator: Data_ConditionalBranchGoldComparator,
-    ]
-  | [type: Data_ConditionalBranchType.Item, itemId: number]
-  | [
-      type: Data_ConditionalBranchType.Weapon,
-      weaponId: number,
-      includeEquipped: boolean,
-    ]
-  | [
-      type: Data_ConditionalBranchType.Armor,
-      armorId: number,
-      includeEquipped: boolean,
-    ]
-  | [type: Data_ConditionalBranchType.Button, key: Key]
-  | [type: Data_ConditionalBranchType.Script, script: string]
-  | [type: Data_ConditionalBranchType.Vehicle, vehicle: VehicleIdOrType];
+      ]
+    | [
+        type: Data_ConditionalBranchType.Variable,
+        variableId: number,
+        ...compareTo: Data_ConditionalBranchVariableOperand,
+        comparator: Data_ConditionalBranchVariableComparator,
+      ]
+    | [
+        type: Data_ConditionalBranchType.SelfSwitch,
+        selfSwitchCh: string, //TODO
+        state: Data_CommandSwitchState,
+      ]
+    | [
+        type: Data_ConditionalBranchType.Timer,
+        seconds: number,
+        comparator: Data_ConditionalBranchTimerComparator,
+      ]
+    | [
+        type: Data_ConditionalBranchType.Actor,
+        actorId: number,
+        ...condition: Data_ConditionalBranchActorCondition,
+      ]
+    | [
+        type: Data_ConditionalBranchType.Enemy,
+        enemyId: number,
+        ...condition: Data_ConditionalBranchEnemyCondition,
+      ]
+    | [type: Data_ConditionalBranchType.Character, direction: Dir4]
+    | [
+        type: Data_ConditionalBranchType.Gold,
+        amount: number,
+        comparator: Data_ConditionalBranchGoldComparator,
+      ]
+    | [type: Data_ConditionalBranchType.Item, itemId: number]
+    | [
+        type: Data_ConditionalBranchType.Weapon,
+        weaponId: number,
+        includeEquipped: boolean,
+      ]
+    | [
+        type: Data_ConditionalBranchType.Armor,
+        armorId: number,
+        includeEquipped: boolean,
+      ]
+    | [type: Data_ConditionalBranchType.Button, key: Key]
+    | [type: Data_ConditionalBranchType.Script, script: string]
+    | [type: Data_ConditionalBranchType.Vehicle, vehicle: Data_VehicleIdOrType]
+  );
 
 declare const enum Data_ControlVariablesOperationType {
   Set = 0,
@@ -599,7 +607,7 @@ declare const enum Data_ChangeSkillOperator {
 }
 
 declare type Data_CommandParameters = {
-  [key: number]: unknown[]; // TODO []?
+  [key: Data_CommandType]: unknown[];
 } & {
   [Data_CommandType.ShowText]: [
     faceName: string,
@@ -619,16 +627,6 @@ declare type Data_CommandParameters = {
   [Data_CommandType.ShowScrollingText]: [speed: number, noFast: boolean];
   [Data_CommandType.ScrollingTextData]: [string];
 
-  /**
-   * The game itself doesn't do anything much with comments.
-   * They're simply a way to comment the event behavior.
-   *
-   * The engine, after executing this function, leaves all the comments
-   * in the {@link Game_Interpreter._comments} array, so the plugins can,
-   * for example, read some metadata from it.
-   *
-   * TODO: Find out why {@link Data_CommandType.CommentTextData} exists.
-   */
   [Data_CommandType.Comment]: [string];
   [Data_CommandType.CommentTextData]: [string];
 
@@ -686,7 +684,7 @@ declare type Data_CommandParameters = {
   [Data_CommandType.ChangeWindowColor]: [RGBAColor];
 
   [Data_CommandType.ChangeDefeatMe]: [AudioObject];
-  [Data_CommandType.ChangeVehicleBgm]: [VehicleIdOrType, AudioObject];
+  [Data_CommandType.ChangeVehicleBgm]: [Data_VehicleIdOrType, AudioObject];
 
   [Data_CommandType.TransferPlayer]: [
     ...transfer: Data_TransferParameters,
@@ -694,7 +692,7 @@ declare type Data_CommandParameters = {
     fadeType: FadeType,
   ];
   [Data_CommandType.SetVehicleLocation]: [
-    vehicle: VehicleIdOrType,
+    vehicle: Data_VehicleIdOrType,
     ...transfer: Data_TransferParameters,
   ];
   [Data_CommandType.SetEventLocation]: [
@@ -888,10 +886,16 @@ declare type Data_CommandParameters = {
     battlerName: string,
   ];
   [Data_CommandType.ChangeVehicleImage]: [
-    vehicleId: VehicleIdOrType,
+    vehicleId: Data_VehicleIdOrType,
     characterName: string,
     characterIndex: number,
   ];
   [Data_CommandType.ChangeNickname]: [actorId: number, nickname: string];
   [Data_CommandType.ChangeProfile]: [actorId: number, profile: string];
 };
+
+declare interface Data_Command<T extends Data_CommandType = Data_CommandType> {
+  code: T;
+  indent: number;
+  parameters: Data_CommandParameters[T];
+}

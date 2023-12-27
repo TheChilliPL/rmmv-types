@@ -1,74 +1,5 @@
-declare type BattlerParams = [
-  /** Maximum hit points */
-  mhp: number,
-  /** Maximum magic points */
-  mmp: number,
-  /** Attack power */
-  atk: number,
-  /** Defense power */
-  def: number,
-  /** Magical attack power */
-  mat: number,
-  /** Magical defense power */
-  mdf: number,
-  /** Agility */
-  agi: number,
-  /** Luck */
-  luk: number,
-];
-
-declare type BattlerXParams = [
-  /** Hit rate */
-  hit: number,
-  /** Evasion rate */
-  eva: number,
-  /** Critical rate */
-  cri: number,
-  /** Critical evasion rate */
-  cev: number,
-  /** Magic evasion rate */
-  mev: number,
-  /** Magic reflection rate */
-  mrf: number,
-  /** Counter attack rate */
-  cnt: number,
-  /** HP regeneration rate */
-  hrg: number,
-  /** MP regeneration rate */
-  mrg: number,
-  /** TP regeneration rate */
-  trg: number,
-];
-
-declare type BattlerSParams = [
-  /** Target rate */
-  tgr: number,
-  /** Guard effect rate */
-  grd: number,
-  /** Recovery effect rate */
-  rec: number,
-  /** Pharmacology */
-  pha: number,
-  /** MP cost rate */
-  mcr: number,
-  /** TP charge rate */
-  tcr: number,
-  /** Physical damage rate */
-  pdr: number,
-  /** Magical damage rate */
-  mdr: number,
-  /** Floor damage rate */
-  fdr: number,
-  /** Experience rate */
-  exr: number,
-];
-
-declare interface BattlerTraitObject {
-  traits: Data_Trait[];
-}
-
 /**
- * The superclass of Game_Battler. It mainly contains parameters calculation.
+ * The superclass of {@link Game_Battler}. It mainly contains parameters calculation.
  */
 declare class Game_BattlerBase {
   static TRAIT_ELEMENT_RATE: 11;
@@ -106,11 +37,11 @@ declare class Game_BattlerBase {
   _mp: number;
   _tp: number;
 
-  _paramPlus: BattlerParams;
+  _paramPlus: Data_BattlerParams;
   _states: number[];
   _stateTurns: { [stateId: number]: number };
-  _buffs: BattlerParams;
-  _buffTurns: BattlerParams;
+  _buffs: Data_BattlerParams;
+  _buffTurns: Data_BattlerParams;
 
   /** Hit points */
   get hp(): number;
@@ -213,7 +144,7 @@ declare class Game_BattlerBase {
   buffIconIndex(buffLevel: number, paramId: number): number;
   allIcons(): number[];
 
-  traitObjects(): BattlerTraitObject[];
+  traitObjects(): Data_TraitObject[];
   allTraits(): Data_Trait[];
   traits(code: number): Data_Trait[];
   traitsWithId(code: number, id: number): Data_Trait[];

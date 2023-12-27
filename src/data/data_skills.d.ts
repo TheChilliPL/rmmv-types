@@ -17,7 +17,7 @@ declare interface Data_Skill extends Data_Item {
   repeats: number;
   requiredWtypeId1: number;
   requiredWtypeId2: number;
-  scope: ItemScope;
+  scope: Data_ItemScope;
   speed: number;
   stypeId: number;
   successRate: number;

@@ -12,7 +12,7 @@ interface Haha {
 
 function test(battler: Game_BattlerBase) {}
 
-let effect = BattlerEffectType.Whiten;
+let effect = Data_BattlerEffectType.Whiten;
 
 let haha: Haha = LOL;
 
@@ -22,6 +22,18 @@ aa._blendMode = PIXI.BLEND_MODES.NORMAL;
 new haha(2);
 
 let a = new Window();
+
+let route: Data_EventMoveRoute = {
+  list: [
+    {
+      code: Data_RouteCommandType.MoveDown,
+      // parameters: [PIXI.BLEND_MODES.ADD_NPM]
+    } as Data_RouteCommand<Data_RouteCommandType.MoveDown>,
+  ],
+  repeat: false,
+  skippable: false,
+  wait: false,
+};
 
 SceneManager.catchException(2 as unknown as Error);
 

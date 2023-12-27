@@ -1,5 +1,7 @@
 /**
  * The wrapper class for an actor array.
+ *
+ * @see Game_Actor
  */
 declare class Game_Actors {
   initialize(): void;

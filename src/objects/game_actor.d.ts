@@ -93,7 +93,7 @@ declare class Game_Actor extends Game_Battler {
   skills(): Data_Skill[];
   usableSkills(): Data_Skill[];
 
-  override traitObjects(): BattlerTraitObject[];
+  override traitObjects(): Data_TraitObject[];
   override attackElements(): number[];
 
   hasNoWeapons(): boolean;

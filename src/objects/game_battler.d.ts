@@ -1,37 +1,5 @@
-declare const enum BattlerEffectType {
-  Whiten = "whiten",
-  Blink = "blink",
-  Collapse = "collapse",
-  BossCollapse = "bossCollapse",
-  InstantCollapse = "instantCollapse",
-}
-
-declare const enum BattlerMotionType {
-  Guard = "guard",
-  Spell = "spell",
-  Skill = "skill",
-  Item = "item",
-
-  Thrust = "thrust",
-  Swing = "swing",
-  Missile = "missile",
-
-  Damage = "damage",
-  Evade = "evade",
-  Victory = "victory",
-  Escape = "escape",
-}
-
-declare const enum BattlerActionState {
-  Undecided = "undecided",
-  Inputting = "inputting",
-  Waiting = "waiting",
-  Acting = "acting",
-  Done = "done",
-}
-
 /**
- * The superclass of Game_Actor and Game_Enemy. It contains methods for sprites
+ * The superclass of {@link Game_Actor} and {@link Game_Enemy}. It contains methods for sprites
  * and actions.
  */
 declare class Game_Battler extends Game_BattlerBase {
@@ -45,7 +13,7 @@ declare class Game_Battler extends Game_BattlerBase {
   _animations: Data_Animation[]; // TODO ?
   _damagePopup: boolean;
   _effectType: Maybe<Data_Effect>;
-  _motionType: BattlerMotionType;
+  _motionType: Data_BattlerMotionType;
   _weaponImageId: number;
   _motionRefresh: boolean;
   _selected: boolean;
@@ -56,8 +24,8 @@ declare class Game_Battler extends Game_BattlerBase {
   clearEffect(): void;
   clearMotion(): void;
 
-  requestEffect(effectType: BattlerEffectType): void;
-  requestMotion(motionType: BattlerMotionType): void;
+  requestEffect(effectType: Data_BattlerEffectType): void;
+  requestMotion(motionType: Data_BattlerMotionType): void;
   requestMotionRefresh(): void;
 
   select(): void;
@@ -72,8 +40,8 @@ declare class Game_Battler extends Game_BattlerBase {
 
   isSelected(): boolean;
 
-  effectType(): BattlerEffectType;
-  motionType(): BattlerMotionType;
+  effectType(): Data_BattlerEffectType;
+  motionType(): Data_BattlerMotionType;
   weaponImageId(): number;
 
   shiftAnimation(): Data_Animation;
@@ -141,7 +109,7 @@ declare class Game_Battler extends Game_BattlerBase {
   onBattleEnd(): void;
   onDamage(value: number): void;
 
-  setActionState(actionState: BattlerActionState): void;
+  setActionState(actionState: Data_BattlerActionState): void;
 
   isUndecided(): boolean;
   isInputting(): boolean;

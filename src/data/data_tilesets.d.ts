@@ -101,8 +101,7 @@ declare type TilesetDirectionFlags =
 
 declare interface Data_Tileset {
   id: number;
-  // TODO Document tileset flags.
-  flags: number[];
+  flags: TilesetFlags[];
   mode: TilesetMode;
   name: string;
   tilesetNames: [

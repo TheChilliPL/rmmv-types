@@ -2,9 +2,11 @@ declare type Data_Armors = OneIndexedArray<Data_Armor>;
 
 declare interface Data_Armor extends Data_Item {
   id: number;
-  atypeId: number; //TODO
+  /** Armor type ID. */
+  atypeId: number;
   description: string;
-  etypeId: number; //TODO
+  /** Equipment type ID. */
+  etypeId: number;
   traits: Data_Trait[];
   iconIndex: number;
   name: string;

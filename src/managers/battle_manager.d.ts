@@ -86,7 +86,7 @@ declare class BattleManager {
   static clearActor(): void;
   static changeActor(
     newActorIndex: number,
-    lastActorActionState: BattlerActionState
+    lastActorActionState: Data_BattlerActionState,
   ): void;
 
   static startBattle(): void;
@@ -115,7 +115,7 @@ declare class BattleManager {
   static invokeCounterAttack(subject: Game_Battler, target: Game_Battler): void;
   static invokeMagicReflection(
     subject: Game_Battler,
-    target: Game_Battler
+    target: Game_Battler,
   ): void;
 
   static applySubstitute(target: Game_Battler): Game_Battler;
