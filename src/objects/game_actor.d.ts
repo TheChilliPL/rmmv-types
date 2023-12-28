@@ -174,7 +174,7 @@ declare class Game_Actor extends Game_Battler {
   lastCommandSymbol(): string;
   setLastCommandSymbol(symbol: string): void;
 
-  testEscape(item: Data_Item): boolean;
+  testEscape(item: Data_ItemBase): boolean;
 
-  override meetsUsableItemConditions(item: Data_Item): boolean;
+  override meetsUsableItemConditions(item: Data_ItemBase): boolean;
 }

@@ -1,6 +1,6 @@
 declare type Data_Armors = OneIndexedArray<Data_Armor>;
 
-declare interface Data_Armor extends Data_Item {
+declare interface Data_Armor extends Data_ItemBase {
   id: number;
   /** Armor type ID. */
   atypeId: number;

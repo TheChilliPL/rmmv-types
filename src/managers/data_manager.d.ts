@@ -90,10 +90,10 @@ declare class DataManager {
   static isBattleTest(): boolean;
   static isEventTest(): boolean;
 
-  static isSkill(item: Data_NormalItem): boolean;
-  static isItem(item: Data_NormalItem): boolean;
-  static isWeapon(item: Data_NormalItem): boolean;
-  static isArmor(item: Data_NormalItem): boolean;
+  static isSkill(item: Data_Item): boolean;
+  static isItem(item: Data_Item): boolean;
+  static isWeapon(item: Data_Item): boolean;
+  static isArmor(item: Data_Item): boolean;
 
   static createGameObjects(): void;
 

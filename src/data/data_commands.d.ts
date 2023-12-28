@@ -1,4 +1,6 @@
 declare const enum Data_CommandType {
+  End = 0,
+
   ShowText = 101,
   ShowChoices = 102,
   InputNumber = 103,
@@ -675,6 +677,18 @@ declare type Data_BattleProcessingDesignation = [
       ]
   );
 
+declare const enum Data_ShopGoodType {
+  Item,
+  Weapon,
+  Armor,
+}
+
+declare type Data_ShopGood = [
+  type: Data_ShopGoodType,
+  id: number,
+  ...([customPrice: 0, _price: 0] | [customPrice: 1, price: number]),
+];
+
 declare const enum Data_IterateActorOperandType {
   Constant,
   Variable,
@@ -705,6 +719,8 @@ declare const enum Data_ChangeSkillOperator {
 declare type Data_CommandParameters = {
   [key: Data_CommandType]: unknown[];
 } & {
+  [Data_CommandType.End]: [];
+
   [Data_CommandType.ShowText]: [
     faceName: string,
     faceIndex: number,
@@ -746,7 +762,7 @@ declare type Data_CommandParameters = {
   ];
   [Data_CommandType.ControlVariables]: Data_ControlVariablesParameters;
   [Data_CommandType.ControlSelfSwitch]: [
-    selfSwitchCh: string, //TODO
+    selfSwitchCh: SelfSwitchChar,
     state: Data_CommandSwitchState,
   ];
   [Data_CommandType.ControlTimer]: Data_ControlTimerParameters;
@@ -916,10 +932,10 @@ declare type Data_CommandParameters = {
   [Data_CommandType.IfLose]: [];
 
   [Data_CommandType.ShopProcessing]: [
-    ...firstProduct: ShopProduct,
+    ...shopGood: Data_ShopGood,
     purchaseOnly: boolean,
   ];
-  [Data_CommandType.ShopGoodsData]: [ShopProduct];
+  [Data_CommandType.ShopGoodsData]: Data_ShopGood;
 
   [Data_CommandType.NameInputProcessing]: [actorId: number, maxLength: number];
 

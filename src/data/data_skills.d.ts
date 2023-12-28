@@ -1,6 +1,6 @@
 declare type Data_Skills = OneIndexedArray<Data_Skill>;
 
-declare interface Data_Skill extends Data_Item {
+declare interface Data_Skill extends Data_ItemBase {
   id: number;
   animationId: number;
   damage: Data_Damage;

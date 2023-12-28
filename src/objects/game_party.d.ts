@@ -14,7 +14,7 @@ declare class Game_Party extends Game_Unit<Game_Actor> {
 
   _gold: number;
   _steps: number;
-  _lastItem: Data_Item;
+  _lastItem: Data_ItemBase;
   _menuActorId: number;
   _targetActorId: number;
   _actors: number[];
@@ -33,12 +33,12 @@ declare class Game_Party extends Game_Unit<Game_Actor> {
   leader(): Game_Actor;
   reviveBattleMembers(): void;
 
-  items(): Data_NormalItem[];
+  items(): Data_Item[];
   weapons(): Data_Weapon[];
   armors(): Data_Armor[];
   equipItems(): Data_EquipItem[];
-  allItems(): (Data_NormalItem | Data_EquipItem)[];
-  itemContainer(item: Data_Item): Maybe<OneIndexedArray<number>>;
+  allItems(): (Data_Item | Data_EquipItem)[];
+  itemContainer(item: Data_ItemBase): Maybe<OneIndexedArray<number>>;
 
   setupStartingMembers(): void;
   name(): string;
@@ -55,14 +55,14 @@ declare class Game_Party extends Game_Unit<Game_Actor> {
   maxGold(): number;
   steps(): number;
   increaseSteps(): void;
-  numItems(item: Data_Item): number;
-  maxItems(item: Data_Item): number;
-  hasMaxItems(item: Data_Item): boolean;
-  hasItem(item: Data_Item, includeEquip: boolean): boolean;
+  numItems(item: Data_ItemBase): number;
+  maxItems(item: Data_ItemBase): number;
+  hasMaxItems(item: Data_ItemBase): boolean;
+  hasItem(item: Data_ItemBase, includeEquip: boolean): boolean;
   isAnyMemberEquipped(item: Data_EquipItem): boolean;
-  gainItem(item: Data_Item, amount: number, includeEquip: boolean): void;
+  gainItem(item: Data_ItemBase, amount: number, includeEquip: boolean): void;
   discardMembersEquip(item: Data_EquipItem, amount: number): void;
-  loseItem(item: Data_Item, amount: number, includeEquip: boolean): void;
+  loseItem(item: Data_ItemBase, amount: number, includeEquip: boolean): void;
   consumeItem(item: Data_UsableItem): void;
 
   canUse(item: Data_UsableItem): boolean;
@@ -77,8 +77,8 @@ declare class Game_Party extends Game_Unit<Game_Actor> {
   makeMenuActorPrevious(): void;
   targetActor(): Game_Actor;
   setTargetActor(actor: Game_Actor): void;
-  lastItem(): Data_Item;
-  setLastItem(item: Data_Item): void;
+  lastItem(): Data_ItemBase;
+  setLastItem(item: Data_ItemBase): void;
   swapOrder(index1: number, index2: number): void;
 
   charactersForSavefile(): SavefileCharacter[];

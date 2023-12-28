@@ -42,7 +42,7 @@ declare class Game_Action {
   setItemObject(object: Data_UsableItem): void;
   setTarget(targetIndex: number): void;
 
-  item(): Data_Item;
+  item(): Data_ItemBase;
   isSkill(): boolean;
   isItem(): boolean;
 

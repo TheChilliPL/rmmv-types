@@ -7,9 +7,9 @@ declare class SceneManager {
 
   static _getTimeInMsWithoutMobileSafari(): number;
 
-  static _scene: Maybe<Scene>;
-  static _nextScene: Maybe<Scene>;
-  static _stack: Scene[];
+  static _scene: Maybe<Scene_Base>;
+  static _nextScene: Maybe<Scene_Base>;
+  static _stack: Scene_Base[];
   static _stopped: boolean;
   static _sceneStarted: boolean;
   static _exiting: boolean;
@@ -46,8 +46,8 @@ declare class SceneManager {
     lineno: number;
   }): void;
   static onKeyDown(event: KeyboardEvent): void;
-  static catchException(e: Error): void;
-  static catchException(unknownError: unknown): void; //TODO Needed?
+  static catchException(error: Error): void;
+  static catchException(unknownError: unknown): void;
 
   static tickStart(): void;
   static tickEnd(): void;

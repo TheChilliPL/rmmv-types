@@ -1,4 +1,4 @@
-declare type Data_Items = OneIndexedArray<Data_NormalItem>;
+declare type Data_Items = OneIndexedArray<Data_Item>;
 
 declare const enum Data_DamageType {
   HPDamage,
@@ -69,7 +69,7 @@ declare const enum Data_ItemScope {
   User,
 }
 
-declare interface Data_Item {
+declare interface Data_ItemBase {
   id: number;
   description: string;
   iconIndex: number;
@@ -77,10 +77,10 @@ declare interface Data_Item {
   note: string;
 }
 
-declare type Data_UsableItem = Data_Skill | Data_NormalItem;
+declare type Data_UsableItem = Data_Skill | Data_Item;
 declare type Data_EquipItem = Data_Weapon | Data_Armor;
 
-declare interface Data_NormalItem extends Data_Item {
+declare interface Data_Item extends Data_ItemBase {
   id: number;
   animationId: number;
   consumable: boolean;

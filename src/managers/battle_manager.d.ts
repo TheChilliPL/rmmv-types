@@ -17,7 +17,7 @@ declare const enum BattleResult {
 declare interface BattleRewards {
   gold?: number;
   exp?: number;
-  items?: Data_NormalItem[];
+  items?: Data_Item[];
 }
 
 declare class BattleManager {

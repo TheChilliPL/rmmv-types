@@ -3,8 +3,8 @@
  * required because save data should not include the database object itself.
  */
 declare class Game_Item {
-  constructor(item: Data_Item);
-  initialize(item: Data_Item): void;
+  constructor(item: Data_ItemBase);
+  initialize(item: Data_ItemBase): void;
 
   _dataClass: string;
   _itemId: number;
@@ -19,8 +19,8 @@ declare class Game_Item {
 
   itemId(): number;
 
-  object(): Data_Item;
-  setObject(item: Data_Item): void;
+  object(): Data_ItemBase;
+  setObject(item: Data_ItemBase): void;
 
   setEquip(isWeapon: boolean, itemId: number): void;
 }

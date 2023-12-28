@@ -29,10 +29,10 @@ declare class Game_Enemy extends Game_Battler {
   makeDropItems(): Data_DropItem[];
   dropItemRate(): number;
 
-  itemObject(kind: 1, dataId: number): Data_NormalItem;
+  itemObject(kind: 1, dataId: number): Data_Item;
   itemObject(kind: 2, dataId: number): Data_Weapon;
   itemObject(kind: 3, dataId: number): Data_Armor;
-  itemObject(kind: number, dataId: number): Maybe<Data_Item>;
+  itemObject(kind: number, dataId: number): Maybe<Data_ItemBase>;
 
   isSpriteVisible(): boolean;
   screenX(): number;

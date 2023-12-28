@@ -1,6 +1,6 @@
 declare type Data_Weapons = OneIndexedArray<Data_Weapon>;
 
-declare interface Data_Weapon extends Data_Item {
+declare interface Data_Weapon extends Data_ItemBase {
   id: number;
   animationId: number;
   description: string;
