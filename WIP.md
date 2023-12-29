@@ -7,6 +7,8 @@
 - rpg_objects.js → objects/: 10641/10641
 - rpg_scenes.js → scenes/: 2690/2690
 
+## In progress
+- rpg_sprites.js → sprites/: 635/2692
+
 ## To do
 - rpg_windows.js → windows/: 0/6025
-- rpg_sprites.js → sprites/: 0/2692
