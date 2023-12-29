@@ -5,7 +5,7 @@ declare interface Data_Skill extends Data_ItemBase {
   animationId: number;
   damage: Data_Damage;
   description: string;
-  effects: Data_Effect[];
+  effects: Data_ItemEffect[];
   hitType: number;
   iconIndex: number;
   message1: string;

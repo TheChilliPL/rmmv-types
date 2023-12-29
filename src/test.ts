@@ -90,3 +90,5 @@ int.gameDataOperand(
 );
 
 int.operateVariable(1, Data_ControlVariablesOperationType.Set, 2);
+
+let actorSprite = new Sprite_Actor(new Game_Actor(1));

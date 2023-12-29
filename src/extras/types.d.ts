@@ -12,8 +12,8 @@ type Eight<T> = [T, T, T, T, T, T, T, T];
 type Nine<T> = [T, T, T, T, T, T, T, T, T];
 type Ten<T> = [T, T, T, T, T, T, T, T, T, T];
 
-type RGBAColor = [number, number, number, number];
-type RGBColor = [number, number, number];
+type RGBAColor = [red: number, green: number, blue: number, alpha: number];
+type RGBColor = [red: number, green: number, blue: number];
 
 interface AllowOtherParameters {
   [key: string]: unknown;

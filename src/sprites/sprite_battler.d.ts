@@ -1,10 +1,20 @@
 /**
  * The superclass of {@link Sprite_Actor} and {@link Sprite_Enemy}.
  */
-declare class Sprite_Battler extends Sprite_Base {
-  override initialize(): void;
+declare class Sprite_Battler<
+  TBattler extends Game_Battler,
+> extends Sprite_Base {
+  constructor(battler: TBattler);
+  override initialize(battler: TBattler): void;
 
-  _battler: Game_Battler;
+  /**
+   * @remarks
+   * For whatever reason, seems to be almost unused in derived classes.
+   *
+   * {@link Sprite_Actor} uses {@link Sprite_Actor#_actor} instead and
+   * {@link Sprite_Enemy} uses {@link Sprite_Enemy#_enemy} instead.
+   */
+  _battler: TBattler;
   _damages: Sprite_Damage[];
   _homeX: number;
   _homeY: number;
@@ -16,7 +26,7 @@ declare class Sprite_Battler extends Sprite_Base {
   _selectionEffectCount: number;
 
   initMembers(): void;
-  setBattler(battler: Game_Battler): void;
+  setBattler(battler: TBattler): void;
   setHome(x: number, y: number): void;
 
   override update(): void;

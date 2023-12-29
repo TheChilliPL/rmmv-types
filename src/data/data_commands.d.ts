@@ -12,7 +12,7 @@ declare const enum Data_CommandType {
    * They're simply a way to comment the event behavior.
    *
    * The engine, after executing this function, leaves all the comments
-   * in the {@link Game_Interpreter._comments} array, so the plugins can,
+   * in the {@link Game_Interpreter#_comments} array, so the plugins can,
    * for example, read some metadata from it.
    *
    * TODO: Find out why {@link Data_CommandType.CommentTextData} exists.

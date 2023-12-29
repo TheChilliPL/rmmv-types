@@ -12,7 +12,7 @@ declare class Game_Battler extends Game_BattlerBase {
   _lastTargetIndex: number;
   _animations: Data_Animation[]; // TODO ?
   _damagePopup: boolean;
-  _effectType: Maybe<Data_Effect>;
+  _effectType: Maybe<Data_ItemEffect>;
   _motionType: Data_BattlerMotionType;
   _weaponImageId: number;
   _motionRefresh: boolean;

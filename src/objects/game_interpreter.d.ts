@@ -2,6 +2,7 @@
  * The interpreter for running event commands.
  */
 declare class Game_Interpreter {
+  constructor(depth: number = 0);
   initialize(depth: number = 0): void;
 
   _depth: number;

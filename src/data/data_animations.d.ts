@@ -1,9 +1,15 @@
 declare type Data_Animations = OneIndexedArray<Data_Animation>;
 
+declare const enum Data_AnimationFlashScope {
+  Flash = 1,
+  Screen,
+  Hide,
+}
+
 declare interface Data_AnimationTiming {
   flashColor: RGBAColor;
   flashDuration: number;
-  flashScope: number;
+  flashScope: Data_AnimationFlashScope;
   frame: number;
   se: Maybe<AudioObject>;
 }

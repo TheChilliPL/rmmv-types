@@ -8,6 +8,7 @@
  * from {@link Sprite} instead.
  */
 declare class Sprite_Base extends Sprite {
+  constructor();
   override initialize(): void;
 
   _animationSprites: Sprite[];

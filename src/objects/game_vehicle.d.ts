@@ -2,6 +2,7 @@
  * The game object class for a vehicle.
  */
 declare class Game_Vehicle extends Game_Character {
+  constructor(type: Data_VehicleType);
   override initialize(type: Data_VehicleType): void;
 
   _type: Data_VehicleType;

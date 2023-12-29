@@ -2,36 +2,40 @@
  * The superclass of {@link Game_Battler}. It mainly contains parameters calculation.
  */
 declare class Game_BattlerBase {
-  static TRAIT_ELEMENT_RATE: 11;
-  static TRAIT_DEBUFF_RATE: 12;
-  static TRAIT_STATE_RATE: 13;
-  static TRAIT_STATE_RESIST: 14;
-  static TRAIT_PARAM: 21;
-  static TRAIT_XPARAM: 22;
-  static TRAIT_SPARAM: 23;
-  static TRAIT_ATTACK_ELEMENT: 31;
-  static TRAIT_ATTACK_STATE: 32;
-  static TRAIT_ATTACK_SPEED: 33;
-  static TRAIT_ATTACK_TIMES: 34;
-  static TRAIT_STYPE_ADD: 41;
-  static TRAIT_STYPE_SEAL: 42;
-  static TRAIT_SKILL_ADD: 43;
-  static TRAIT_SKILL_SEAL: 44;
-  static TRAIT_EQUIP_WTYPE: 51;
-  static TRAIT_EQUIP_ATYPE: 52;
-  static TRAIT_EQUIP_LOCK: 53;
-  static TRAIT_EQUIP_SEAL: 54;
-  static TRAIT_SLOT_TYPE: 55;
-  static TRAIT_ACTION_PLUS: 61;
-  static TRAIT_SPECIAL_FLAG: 62;
-  static TRAIT_COLLAPSE_TYPE: 63;
-  static TRAIT_PARTY_ABILITY: 64;
-  static FLAG_ID_AUTO_BATTLE: 0;
-  static FLAG_ID_GUARD: 1;
-  static FLAG_ID_SUBSTITUTE: 2;
-  static FLAG_ID_PRESERVE_TP: 3;
-  static ICON_BUFF_START: 32;
-  static ICON_DEBUFF_START: 48;
+  static TRAIT_ELEMENT_RATE: Data_TraitType.ElementRate;
+  static TRAIT_DEBUFF_RATE: Data_TraitType.DebuffRate;
+  static TRAIT_STATE_RATE: Data_TraitType.StateRate;
+  static TRAIT_STATE_RESIST: Data_TraitType.StateResist;
+  static TRAIT_PARAM: Data_TraitType.Param;
+  static TRAIT_XPARAM: Data_TraitType.XParam;
+  static TRAIT_SPARAM: Data_TraitType.SParam;
+  static TRAIT_ATTACK_ELEMENT: Data_TraitType.AttackElement;
+  static TRAIT_ATTACK_STATE: Data_TraitType.AttackState;
+  static TRAIT_ATTACK_SPEED: Data_TraitType.AttackSpeed;
+  static TRAIT_ATTACK_TIMES: Data_TraitType.AttackTimes;
+  static TRAIT_STYPE_ADD: Data_TraitType.StypeAdd;
+  static TRAIT_STYPE_SEAL: Data_TraitType.StypeSeal;
+  static TRAIT_SKILL_ADD: Data_TraitType.SkillAdd;
+  static TRAIT_SKILL_SEAL: Data_TraitType.SkillSeal;
+  static TRAIT_EQUIP_WTYPE: Data_TraitType.EquipWtype;
+  static TRAIT_EQUIP_ATYPE: Data_TraitType.EquipAtype;
+  static TRAIT_EQUIP_LOCK: Data_TraitType.EquipLock;
+  static TRAIT_EQUIP_SEAL: Data_TraitType.EquipSeal;
+  static TRAIT_SLOT_TYPE: Data_TraitType.SlotType;
+  static TRAIT_ACTION_PLUS: Data_TraitType.ActionPlus;
+  static TRAIT_SPECIAL_FLAG: Data_TraitType.SpecialFlag;
+  static TRAIT_COLLAPSE_TYPE: Data_TraitType.CollapseType;
+  static TRAIT_PARTY_ABILITY: Data_TraitType.PartyAbility;
+
+  static FLAG_ID_AUTO_BATTLE: Data_TraitFlag.AutoBattle;
+  static FLAG_ID_GUARD: Data_TraitFlag.Guard;
+  static FLAG_ID_SUBSTITUTE: Data_TraitFlag.Substitute;
+  static FLAG_ID_PRESERVE_TP: Data_TraitFlag.PreserveTp;
+
+  static ICON_BUFF_START: number;
+  static ICON_DEBUFF_START: number;
+
+  initialize(): void;
 
   _hp: number;
   _mp: number;
@@ -106,7 +110,6 @@ declare class Game_BattlerBase {
   /** Experience rate */
   get exr(): number;
 
-  initialize(): void;
   initMembers(): void;
 
   clearParamPlus(): void;

@@ -1,9 +1,9 @@
 declare class Sprite extends PIXI.Sprite {
-  constructor(bitmap: Bitmap);
+  constructor(bitmap?: Bitmap);
 
   static voidFilter: PIXI.filters.VoidFilter;
 
-  initialize(bitmap: Bitmap): void;
+  initialize(bitmap?: Bitmap): void;
 
   _bitmap: Maybe<Bitmap>;
   _frame: Rectangle;

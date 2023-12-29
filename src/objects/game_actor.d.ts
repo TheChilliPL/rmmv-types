@@ -2,6 +2,7 @@
  * The game object class for an actor.
  */
 declare class Game_Actor extends Game_Battler {
+  constructor(actorId: number);
   override initialize(actorId: number): void;
 
   _actorId: number;

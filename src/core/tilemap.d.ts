@@ -1,6 +1,21 @@
 declare type AutotileTable = [number, number][][];
 
 declare class Tilemap extends PIXI.Container {
+  static TILE_ID_B: number;
+  static TILE_ID_C: number;
+  static TILE_ID_D: number;
+  static TILE_ID_E: number;
+  static TILE_ID_A5: number;
+  static TILE_ID_A1: number;
+  static TILE_ID_A2: number;
+  static TILE_ID_A3: number;
+  static TILE_ID_A4: number;
+  static TILE_ID_MAX: number;
+
+  static FLOOR_AUTOTILE_TABLE: AutotileTable;
+  static WALL_AUTOTILE_TABLE: AutotileTable;
+  static WATERFALL_AUTOTILE_TABLE: AutotileTable;
+
   initialize(): void;
 
   _margin: number;
@@ -53,17 +68,6 @@ declare class Tilemap extends PIXI.Container {
   _sortChildren(): void;
   _compareChildOrder(a: Sprite, b: Sprite): number;
 
-  static TILE_ID_B: number;
-  static TILE_ID_C: number;
-  static TILE_ID_D: number;
-  static TILE_ID_E: number;
-  static TILE_ID_A5: number;
-  static TILE_ID_A1: number;
-  static TILE_ID_A2: number;
-  static TILE_ID_A3: number;
-  static TILE_ID_A4: number;
-  static TILE_ID_MAX: number;
-
   static isVisibleTile(tileId: number): boolean;
   static isAutotile(tileId: number): boolean;
   static getAutotileKind(tileId: number): number;
@@ -87,8 +91,4 @@ declare class Tilemap extends PIXI.Container {
   static isFloorTypeAutotile(tileId: number): boolean;
   static isWallTypeAutotile(tileId: number): boolean;
   static isWaterfallTypeAutotile(typeId: number): boolean;
-
-  static FLOOR_AUTOTILE_TABLE: AutotileTable;
-  static WALL_AUTOTILE_TABLE: AutotileTable;
-  static WATERFALL_AUTOTILE_TABLE: AutotileTable;
 }

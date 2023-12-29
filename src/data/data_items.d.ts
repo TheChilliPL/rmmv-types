@@ -17,7 +17,7 @@ declare interface Data_Damage {
   variance: number;
 }
 
-declare const enum Data_EffectType {
+declare const enum Data_ItemEffectType {
   RecoverHP = 11,
   RecoverMP,
   GainTP,
@@ -34,8 +34,8 @@ declare const enum Data_EffectType {
   SpecialEscape = 0,
 }
 
-declare interface Data_Effect {
-  code: Data_EffectType;
+declare interface Data_ItemEffect {
+  code: Data_ItemEffectType;
   dataId: number;
   value1: number;
   value2: number;
@@ -86,7 +86,7 @@ declare interface Data_Item extends Data_ItemBase {
   consumable: boolean;
   damage: Data_Damage;
   description: string;
-  effects: Data_Effect[];
+  effects: Data_ItemEffect[];
   hitType: Data_HitType;
   iconIndex: number;
   itypeId: Data_ItemType;

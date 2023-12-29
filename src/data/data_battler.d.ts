@@ -1,4 +1,7 @@
 declare const enum Data_BattlerEffectType {
+  Appear = "appear",
+  Disappear = "disappear",
+
   Whiten = "whiten",
   Blink = "blink",
   Collapse = "collapse",
