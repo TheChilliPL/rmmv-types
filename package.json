@@ -1,8 +1,12 @@
 {
-  "name": "rpgmv-types",
+  "name": "rmmv-types",
   "version": "0.1.0",
   "description": "Type definitions for RPG Maker MV",
-  "author": "TheChilliPL",
+  "author": "TheChilliPL <chilli@thechilli.dev>",
+  "license": "MPL-2.0",
+  "repository": "TheChilliPL/rmmv-types",
+  "homepage": "https://github.com/TheChilliPL/rmmv-types#readme",
+  "bugs": "https://github.com/TheChilliPL/rmmv-types/issues",
   "types": "src/**/*.d.ts",
   "scripts": {
     "build": "tsc --build",
