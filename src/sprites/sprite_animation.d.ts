@@ -21,7 +21,6 @@ declare class Sprite_Animation extends Sprite {
   _cellSprites: Sprite[];
   _screenFlashSprite: Maybe<ScreenFlashSprite>;
   _duplicated: boolean;
-  z: number;
 
   static _checker1: Record<Data_Animation, boolean>;
   static _checker2: Record<Data_Animation, boolean>;

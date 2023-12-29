@@ -5,6 +5,12 @@ declare class Sprite extends PIXI.Sprite {
 
   initialize(bitmap?: Bitmap): void;
 
+  /**
+   * Not sure whether that exists in {@link PIXI.Sprite}?
+   * Seems to be undocumented…
+   */
+  z: number;
+
   _bitmap: Maybe<Bitmap>;
   _frame: Rectangle;
   _realFrame: Rectangle;
@@ -16,11 +22,17 @@ declare class Sprite extends PIXI.Sprite {
   _isPicture: boolean;
   spriteId: number;
   opaque: boolean;
-  bitmap: Bitmap;
 
   static _counter: number;
 
-  opacity: number;
+  get bitmap(): Bitmap;
+  set bitmap(value: Bitmap);
+  override get width(): number;
+  override set width(value: number);
+  override get height(): number;
+  override set height(value: number);
+  get opacity(): number;
+  set opacity(value: number);
 
   update(): void;
   move(x: number, y: number): void;
