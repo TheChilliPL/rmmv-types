@@ -2,7 +2,7 @@
  * The sprite for displaying an enemy.
  */
 declare class Sprite_Enemy extends Sprite_Battler<Game_Enemy> {
-  override initialize(battler: Game_Enemy): void;
+  override initialize(battler?: Game_Enemy): void;
 
   _enemy: Game_Enemy;
   _appeared: boolean;

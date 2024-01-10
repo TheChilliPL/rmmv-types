@@ -1,7 +1,7 @@
 //TODO pixi-picture
 declare class TilingSprite extends PIXI.extras.TilingSprite {
   constructor(bitmap: Bitmap);
-  initialize(bitmap: Bitmap): void;
+  initialize(bitmap?: Bitmap): void;
 
   _bitmap: Maybe<Bitmap>;
   _width: number;

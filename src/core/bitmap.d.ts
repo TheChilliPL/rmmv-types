@@ -12,7 +12,7 @@ declare const enum BitmapLoadingState {
 
 declare class Bitmap {
   constructor(width: number, height: number);
-  initialize(width: number, height: number): void;
+  initialize(width?: number, height?: number): void;
 
   _reuseImages: HTMLImageElement[];
 

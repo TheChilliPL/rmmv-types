@@ -4,7 +4,7 @@
  */
 declare class Game_Event extends Game_Character {
   constructor(mapId: number, eventId: number);
-  override initialize(mapId: number, eventId: number): void;
+  override initialize(mapId?: number, eventId?: number): void;
 
   _mapId: number;
   _eventId: number;

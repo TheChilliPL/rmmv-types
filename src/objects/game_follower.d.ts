@@ -4,7 +4,7 @@
  */
 declare class Game_Follower extends Game_Character {
   constructor(memberIndex: number);
-  override initialize(memberIndex: number): void;
+  override initialize(memberIndex?: number): void;
 
   _memberIndex: number;
 

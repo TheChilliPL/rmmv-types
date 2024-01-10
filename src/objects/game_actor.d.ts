@@ -3,7 +3,7 @@
  */
 declare class Game_Actor extends Game_Battler {
   constructor(actorId: number);
-  override initialize(actorId: number): void;
+  override initialize(actorId?: number): void;
 
   _actorId: number;
   _name: string;

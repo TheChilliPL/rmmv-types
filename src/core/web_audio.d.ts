@@ -3,7 +3,7 @@ declare class WebAudio implements GameAudioBuffer {
 
   static _standAlone: boolean;
 
-  initialize(url: string): void;
+  initialize(url?: string): void;
 
   _loader?: () => void;
   _url: string;
