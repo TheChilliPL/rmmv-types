@@ -2,7 +2,7 @@
  * The scene class of the menu screen.
  */
 declare class Scene_Menu extends Scene_MenuBase {
-  override initialize(): void;
+  override initialize(constructorParams: unknown[]): void;
 
   _commandWindow: Window_MenuCommand;
   _goldWindow: Window_Gold;

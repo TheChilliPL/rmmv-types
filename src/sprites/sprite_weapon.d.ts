@@ -1,5 +1,5 @@
 declare class Sprite_Weapon extends Sprite_Base {
-  override initialize(): void;
+  override initialize(constructorParams: unknown[]): void;
 
   _weaponImageId: number;
   _animationCount: number;

@@ -1,3 +1,3 @@
 declare class Stage extends PIXI.Container {
-  initialize(): void;
+  initialize(constructorParams: unknown[]): void;
 }

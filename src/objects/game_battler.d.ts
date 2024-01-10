@@ -3,7 +3,7 @@
  * and actions.
  */
 declare class Game_Battler extends Game_BattlerBase {
-  override initialize(): void;
+  override initialize(constructorParams: unknown[]): void;
 
   _actions: Game_Action[];
   _speed: number;

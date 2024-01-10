@@ -2,7 +2,7 @@
  * The game object class for an enemy.
  */
 declare class Game_Enemy extends Game_Battler {
-  override initialize(): void;
+  override initialize(constructorParams: unknown[]): void;
 
   _enemyId: number;
   _letter: string;

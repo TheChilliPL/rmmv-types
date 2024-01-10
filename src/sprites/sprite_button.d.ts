@@ -2,7 +2,7 @@
  * The sprite for displaying a button.
  */
 declare class Sprite_Button extends Sprite {
-  override initialize(): void;
+  override initialize(constructorParams: unknown[]): void;
 
   _touching: boolean;
   _coldFrame: Rectangle;

@@ -2,7 +2,7 @@
  * The scene class of the item screen.
  */
 declare class Scene_Item extends Scene_ItemBase {
-  override initialize(): void;
+  override initialize(constructorParams: unknown[]): void;
 
   override _helpWindow: Window_Help;
   _categoryWindow: Window_ItemCategory;

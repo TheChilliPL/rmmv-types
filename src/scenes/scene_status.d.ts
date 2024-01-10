@@ -2,7 +2,7 @@
  * The scene class of the status screen.
  */
 declare class Scene_Status extends Scene_MenuBase {
-  override initialize(): void;
+  override initialize(constructorParams: unknown[]): void;
 
   override _statusWindow: Window_Status;
 

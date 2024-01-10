@@ -3,7 +3,7 @@
  * coordinates and images, shared by all characters.
  */
 declare class Game_CharacterBase {
-  initialize(): void;
+  initialize(constructorParams: unknown[]): void;
 
   _x: number;
   _y: number;
@@ -35,6 +35,8 @@ declare class Game_CharacterBase {
   _jumpCount: number;
   _jumpPeak: number;
   _movementSuccess: boolean;
+
+  initMembers(): void;
 
   pos(x: number, y: number): boolean;
   posNt(x: number, y: number): boolean;
@@ -121,7 +123,7 @@ declare class Game_CharacterBase {
   setTileImage(tileId: number): void;
 
   checkEventTriggerTouchFront(d: Dir4): void;
-  checkEventTriggerTouch(x: number, y: number): boolean;
+  checkEventTriggerTouch(x: number, y: number): void;
 
   isMovementSucceeded(x: number, y: number): boolean;
   setMovementSuccess(success: boolean): void;

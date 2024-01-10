@@ -8,7 +8,7 @@ declare interface ImageCacheItem {
 declare class ImageCache {
   limit: number;
 
-  initialize(): void;
+  initialize(constructorParams: unknown[]): void;
 
   _items: { [key: string]: ImageCacheItem };
 

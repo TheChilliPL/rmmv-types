@@ -2,7 +2,7 @@
  * The scene class of the equipment screen.
  */
 declare class Scene_Equip extends Scene_MenuBase {
-  override initialize(): void;
+  override initialize(constructorParams: unknown[]): void;
 
   override _helpWindow: Window_Help;
   _statusWindow: Window_EquipStatus;

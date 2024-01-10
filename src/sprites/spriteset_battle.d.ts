@@ -2,7 +2,7 @@
  * The set of sprites on the battle screen.
  */
 declare class Spriteset_Battle extends Spriteset_Base {
-  override initialize(): void;
+  override initialize(constructorParams: unknown[]): void;
 
   _battlebackLocated: boolean;
   _backgroundSprite: Sprite;

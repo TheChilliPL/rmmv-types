@@ -4,7 +4,7 @@
  * @see Game_Actor
  */
 declare class Game_Actors {
-  initialize(): void;
+  initialize(constructorParams: unknown[]): void;
 
   _data: OneIndexedArray<Maybe<Game_Actor>>;
 

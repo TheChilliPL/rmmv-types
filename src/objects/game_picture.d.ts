@@ -2,7 +2,7 @@
  * The game object class for a picture.
  */
 declare class Game_Picture {
-  initialize(): void;
+  initialize(constructorParams: unknown[]): void;
 
   _name: string;
   _origin: number;

@@ -2,7 +2,7 @@
  * The superclass of all scenes within the game.
  */
 declare class Scene_Base extends Stage {
-  override initialize(): void;
+  override initialize(constructorParams: unknown[]): void;
 
   _active: boolean;
   _fadeSign: Sign;

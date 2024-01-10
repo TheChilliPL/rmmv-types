@@ -2,7 +2,7 @@
  * The scene class of the game end screen.
  */
 declare class Scene_GameEnd extends Scene_MenuBase {
-  override initialize(): void;
+  override initialize(constructorParams: unknown[]): void;
 
   _commandWindow: Window_GameEnd;
 

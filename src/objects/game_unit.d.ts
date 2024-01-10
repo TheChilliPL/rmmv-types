@@ -2,7 +2,7 @@
  * The superclass of Game_Party and Game_Troop.
  */
 declare class Game_Unit<TBattler extends Game_Battler = Game_Battler> {
-  initialize(): void;
+  initialize(constructorParams: unknown[]): void;
 
   _inBattle: boolean;
 

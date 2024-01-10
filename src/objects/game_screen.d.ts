@@ -10,7 +10,7 @@ declare type Tone = [
  * and flashes.
  */
 declare class Game_Screen {
-  initialize(): void;
+  initialize(constructorParams: unknown[]): void;
 
   _brightness: number;
   _fadeOutDuration: number;

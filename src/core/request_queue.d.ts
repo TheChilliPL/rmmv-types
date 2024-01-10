@@ -4,7 +4,7 @@ interface RequestQueueItem {
 }
 
 declare class RequestQueue {
-  initialize(): void;
+  initialize(constructorParams: unknown[]): void;
 
   _queue: RequestQueueItem[];
 

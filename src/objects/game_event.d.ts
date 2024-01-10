@@ -4,7 +4,7 @@
  */
 declare class Game_Event extends Game_Character {
   constructor(mapId: number, eventId: number);
-  override initialize(mapId?: number, eventId?: number): void;
+  override initialize(constructorParams: unknown[]): void;
 
   _mapId: number;
   _eventId: number;
@@ -61,11 +61,11 @@ declare class Game_Event extends Game_Character {
   override isOriginalPattern(): boolean;
   override resetPattern(): void;
   override checkEventTriggerTouch(x: number, y: number): void;
-  override checkEventTriggerAuto(): void;
+  checkEventTriggerAuto(): void;
 
   update(): void;
   updateParallel(): void;
 
   override locate(x: number, y: number): void;
-  override forceMoveRoute(moveRoute: Data_MoveRoute): void;
+  override forceMoveRoute(moveRoute: Data_EventMoveRoute): void;
 }

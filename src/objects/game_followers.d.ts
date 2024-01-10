@@ -2,7 +2,7 @@
  * The wrapper class for a follower array.
  */
 declare class Game_Followers {
-  initialize(): void;
+  initialize(constructorParams: unknown[]): void;
 
   _visible: boolean;
   _gathering: boolean;
@@ -15,11 +15,11 @@ declare class Game_Followers {
 
   forEach<T>(
     callback: (this: T, follower: Game_Follower) => void,
-    thisObject: T = undefined,
+    thisObject?: T,
   ): void;
   reverseEach<T>(
     callback: (this: T, follower: Game_Follower) => void,
-    thisObject: T = undefined,
+    thisObject?: T,
   ): void;
 
   refresh(): void;

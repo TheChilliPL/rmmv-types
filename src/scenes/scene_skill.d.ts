@@ -2,7 +2,7 @@
  * The scene class of the skill screen.
  */
 declare class Scene_Skill extends Scene_ItemBase {
-  override initialize(): void;
+  override initialize(constructorParams: unknown[]): void;
 
   override _helpWindow: Window_Help;
   _skillTypeWindow: Window_SkillType;

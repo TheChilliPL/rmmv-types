@@ -3,7 +3,7 @@
  */
 declare class Sprite_Animation extends Sprite {
   constructor();
-  override initialize(): void;
+  override initialize(constructorParams: unknown[]): void;
 
   _reduceArtifacts: boolean;
   _target: Maybe<Sprite_Base>;
@@ -19,11 +19,11 @@ declare class Sprite_Animation extends Sprite {
   _bitmap1: Maybe<Bitmap>;
   _bitmap2: Maybe<Bitmap>;
   _cellSprites: Sprite[];
-  _screenFlashSprite: Maybe<ScreenFlashSprite>;
+  _screenFlashSprite: Maybe<ScreenSprite>;
   _duplicated: boolean;
 
-  static _checker1: Record<Data_Animation, boolean>;
-  static _checker2: Record<Data_Animation, boolean>;
+  static _checker1: Record<string, boolean>;
+  static _checker2: Record<string, boolean>;
 
   initMembers(): void;
   setup(

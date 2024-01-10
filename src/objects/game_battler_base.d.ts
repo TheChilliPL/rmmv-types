@@ -35,7 +35,7 @@ declare class Game_BattlerBase {
   static ICON_BUFF_START: number;
   static ICON_DEBUFF_START: number;
 
-  initialize(): void;
+  initialize(constructorParams: unknown[]): void;
 
   _hp: number;
   _mp: number;

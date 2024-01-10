@@ -9,7 +9,7 @@
  */
 declare class Sprite_Base extends Sprite {
   constructor();
-  override initialize(): void;
+  override initialize(constructorParams: unknown[]): void;
 
   _animationSprites: Sprite[];
   _effectTarget: Sprite_Base;

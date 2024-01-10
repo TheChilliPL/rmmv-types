@@ -146,6 +146,7 @@ declare const enum Data_CommandType {
   IfLose = 603,
 
   ShopGoodsData = 605,
+  ScriptData = 655,
 }
 
 declare const enum Data_ConditionalBranchType {
@@ -293,7 +294,7 @@ declare type Data_ConditionalBranchParameters = [
       ]
     | [
         type: Data_ConditionalBranchType.SelfSwitch,
-        selfSwitchCh: string, //TODO
+        selfSwitchCh: SelfSwitchChar,
         state: Data_CommandSwitchState,
       ]
     | [
@@ -716,7 +717,26 @@ declare const enum Data_ChangeSkillOperator {
   ForgetSkill,
 }
 
+declare type Data_ShowBattleAnimationParameters = [
+  enemyId: number,
+  animationId: number,
+  all: boolean,
+] & (
+  | [
+    enemyId: number,
+    animationId: number,
+    all: false,
+  ]
+  | [
+    _unused: 0,
+    animationId: number,
+    all: true,
+  ]
+);
+
 declare type Data_CommandParameters = {
+  [key in Data_CommandType]?: unknown[]
+} & {
   [Data_CommandType.End]: [];
 
   [Data_CommandType.ShowText]: [
@@ -732,6 +752,10 @@ declare type Data_CommandParameters = {
     defaultType?: number,
     positionType?: number,
   ];
+
+  [Data_CommandType.When]: [branch: number];
+  [Data_CommandType.WhenCancel]: [];
+
   [Data_CommandType.InputNumber]: [variableId: number, maxDigits: number];
   [Data_CommandType.SelectItem]: [variableId: number, itemType?: Data_ItemType];
   [Data_CommandType.ShowScrollingText]: [speed: number, noFast: boolean];
@@ -859,7 +883,7 @@ declare type Data_CommandParameters = {
   [Data_CommandType.ShowPicture]: [
     pictureId: number,
     name: string,
-    origin: number, //TODO
+    origin: number,
     ...position: Data_PicturePositionDesignation,
     scaleX: number,
     scaleY: number,
@@ -869,7 +893,7 @@ declare type Data_CommandParameters = {
   [Data_CommandType.MovePicture]: [
     pictureId: number,
     unknown: unknown,
-    origin: number, //TODO
+    origin: number,
     ...position: Data_PicturePositionDesignation,
     scaleX: number,
     scaleY: number,
@@ -968,7 +992,7 @@ declare type Data_CommandParameters = {
   ];
   [Data_CommandType.ChangeParameter]: [
     ...iterator: Data_IterateActorExParameters,
-    param: number, //TODO
+    param: number,
     ...operation: Data_OperateValueParameters,
   ];
   [Data_CommandType.ChangeSkill]: [
@@ -1002,6 +1026,46 @@ declare type Data_CommandParameters = {
   ];
   [Data_CommandType.ChangeNickname]: [actorId: number, nickname: string];
   [Data_CommandType.ChangeProfile]: [actorId: number, profile: string];
+
+  [Data_CommandType.ChangeEnemyHp]: [
+    enemyIndex: number,
+    ...operation: Data_OperateValueParameters,
+    allowDeath: boolean,
+  ];
+  [Data_CommandType.ChangeEnemyMp]: [
+    enemyIndex: number,
+    ...operation: Data_OperateValueParameters,
+  ];
+  [Data_CommandType.ChangeEnemyTp]: [
+    enemyIndex: number,
+    ...operation: Data_OperateValueParameters,
+  ];
+  [Data_CommandType.ChangeEnemyState]: [
+    enemyIndex: number,
+    operator: Data_ChangeStateOperator,
+    stateId: number,
+  ];
+  [Data_CommandType.EnemyRecoverAll]: [enemyIndex: number];
+  [Data_CommandType.EnemyAppear]: [enemyIndex: number];
+  [Data_CommandType.EnemyTransform]: [enemyIndex: number, enemyId: number];
+
+  [Data_CommandType.ShowBattleAnimation]: Data_ShowBattleAnimationParameters;
+  [Data_CommandType.ForceAction]: [
+    battlerType: Data_BattlerIteratorType,
+    battlerId: number,
+    skillId: number,
+    targetIndex: number,
+  ];
+  [Data_CommandType.AbortBattle]: [];
+
+  [Data_CommandType.OpenMenuScreen]: [];
+  [Data_CommandType.OpenSaveScreen]: [];
+  [Data_CommandType.GameOver]: [];
+  [Data_CommandType.ReturnToTitleScreen]: [];
+
+  [Data_CommandType.Script]: [script: string];
+  [Data_CommandType.ScriptData]: [script: string];
+  [Data_CommandType.PluginCommand]: [command: string];
 };
 
 declare interface Data_Command<T extends Data_CommandType = Data_CommandType> {
@@ -1032,5 +1096,5 @@ declare const enum Data_BattlerIteratorType {
 // declare type Data_CommandMethod = `command${Data_CommandType}`;
 //
 declare type Data_HasCommandMethods = {
-  [K in Data_CommandType as `command${K}`]: () => boolean;
+  [K in Data_CommandType as `command${K}`]?: () => boolean;
 };

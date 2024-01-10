@@ -7,7 +7,7 @@ declare const enum Scene_File_Mode {
  * The superclass of Scene_Save and Scene_Load.
  */
 declare class Scene_File extends Scene_MenuBase {
-  override initialize(): void;
+  override initialize(constructorParams: unknown[]): void;
 
   override _helpWindow: Window_Help;
   _listWindow: Window_SavefileList;

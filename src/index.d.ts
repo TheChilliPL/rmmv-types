@@ -1,5 +1,5 @@
-/// <reference types="@types/pixi.js"/>
-/// <reference types="@types/fpsmeter"/>
+// <reference types="@types/pixi.js"/>
+// <reference types="@types/fpsmeter"/>
 
 /// <reference path="./core/index.d.ts"/>
 /// <reference path="./data/index.d.ts"/>

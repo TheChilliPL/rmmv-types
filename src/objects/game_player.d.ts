@@ -3,7 +3,7 @@
  * determinants and map scrolling functions.
  */
 declare class Game_Player extends Game_Character {
-  override initialize(): void;
+  override initialize(constructorParams: unknown[]): void;
 
   _vehicleType: Data_VehicleType | "walk";
   _vehicleGettingOn: boolean;
@@ -78,7 +78,7 @@ declare class Game_Player extends Game_Character {
   getInputDirection(): Dir4;
   executeMove(direction: Dir4): void;
 
-  override update(sceneActive: boolean = false): void;
+  override update(sceneActive?: boolean): void;
   updateDashing(): void;
   isDashButtonPressed(): boolean;
   updateScroll(lastScrolledX: number, lastScrolledY: number): void;

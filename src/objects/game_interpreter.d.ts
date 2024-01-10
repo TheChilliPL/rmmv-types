@@ -3,7 +3,7 @@
  */
 declare class Game_Interpreter {
   constructor(depth: number);
-  initialize(depth?: number): void;
+  initialize(constructorParams: unknown[]): void;
 
   _depth: number;
   _branch: { [indent: number]: number };
@@ -23,7 +23,7 @@ declare class Game_Interpreter {
 
   checkOverflow(): void;
   clear(): void;
-  setup(list: Data_Command[], eventId: number = 0): void;
+  setup(list: Data_Command[], eventId?: number): void;
   eventId(): number;
   isOnCurrentMap(): boolean;
   setupReservedCommonEvent(): boolean;

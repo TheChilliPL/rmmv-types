@@ -2,7 +2,7 @@
  * The scene class of the debug screen.
  */
 declare class Scene_Debug extends Scene_MenuBase {
-  override initialize(): void;
+  override initialize(constructorParams: unknown[]): void;
 
   _rangeWindow: Window_DebugRange;
   _editWindow: Window_DebugEdit;

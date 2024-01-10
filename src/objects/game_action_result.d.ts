@@ -5,7 +5,7 @@
  * @see Game_Action
  */
 declare class Game_ActionResult {
-  initialize(): void;
+  initialize(constructorParams: unknown[]): void;
 
   used: boolean;
   missed: boolean;

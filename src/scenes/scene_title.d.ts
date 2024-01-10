@@ -2,7 +2,7 @@
  * The scene class of the title screen.
  */
 declare class Scene_Title extends Scene_Base {
-  override initialize(): void;
+  override initialize(constructorParams: unknown[]): void;
 
   _backSprite1: Sprite;
   _backSprite2: Sprite;

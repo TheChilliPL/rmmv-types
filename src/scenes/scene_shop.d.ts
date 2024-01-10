@@ -2,7 +2,7 @@
  * The scene class of the shop screen.
  */
 declare class Scene_Shop extends Scene_MenuBase {
-  override initialize(): void;
+  override initialize(constructorParams: unknown[]): void;
 
   _goods: Data_ShopGood[];
   _purchaseOnly: boolean;

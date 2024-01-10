@@ -2,7 +2,7 @@
  * The scene class of the save screen.
  */
 declare class Scene_Save extends Scene_File {
-  override initialize(): void;
+  override initialize(constructorParams: unknown[]): void;
 
   override mode(): Scene_File_Mode.Save;
 

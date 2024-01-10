@@ -2,7 +2,7 @@
  * The game object class for variables.
  */
 declare class Game_Variables {
-  initialize(): void;
+  initialize(constructorParams: unknown[]): void;
 
   _data: OneIndexedArray<number>;
 

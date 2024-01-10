@@ -2,7 +2,7 @@
  * The sprite for displaying a balloon icon.
  */
 declare class Sprite_Balloon extends Sprite_Base {
-  override initialize(): void;
+  override initialize(constructorParams: unknown[]): void;
 
   _balloonId: number;
   _duration: number;

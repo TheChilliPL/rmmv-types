@@ -49,12 +49,12 @@ declare class Game_Character extends Game_CharacterBase {
   static ROUTE_PLAY_SE: Data_RouteCommandType.PlaySE;
   static ROUTE_SCRIPT: Data_RouteCommandType.Script;
 
-  override initialize(): void;
+  override initialize(constructorParams: unknown[]): void;
 
   _moveRouteForcing: boolean;
-  _moveRoute: Maybe<Data_MoveRoute>;
+  _moveRoute: Maybe<Data_EventMoveRoute>;
   _moveRouteIndex: number;
-  _originalMoveRoute: Maybe<Data_MoveRoute>;
+  _originalMoveRoute: Maybe<Data_EventMoveRoute>;
   _originalMoveRouteIndex: number;
   _waitCount: number;
 
@@ -63,8 +63,8 @@ declare class Game_Character extends Game_CharacterBase {
   memorizeMoveRoute(): void;
   restoreMoveRoute(): void;
   isMoveRouteForcing(): boolean;
-  setMoveRoute(moveRoute: Data_MoveRoute): void;
-  forceMoveRoute(moveRoute: Data_MoveRoute): void;
+  setMoveRoute(moveRoute: Data_EventMoveRoute): void;
+  forceMoveRoute(moveRoute: Data_EventMoveRoute): void;
 
   override updateStop(): void;
   updateRoutineMove(): void;
@@ -102,6 +102,6 @@ declare class Game_Character extends Game_CharacterBase {
 
   swap(character: Game_Character): void;
 
-  findDirectionTo(goalX: number, goalY: number): Data_Direction;
+  findDirectionTo(goalX: number, goalY: number): Dir4;
   searchLimit(): number;
 }

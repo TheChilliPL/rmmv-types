@@ -3,7 +3,7 @@
  * determination functions.
  */
 declare class Game_Map {
-  initialize(): void;
+  initialize(constructorParams: unknown[]): void;
 
   _interpreter: Game_Interpreter;
   _mapId: number;
