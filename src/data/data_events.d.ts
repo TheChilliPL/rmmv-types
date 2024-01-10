@@ -161,7 +161,7 @@ declare type Data_RouteCommandParameters = {
     characterIndex: number,
   ];
   [Data_RouteCommandType.ChangeOpacity]: [opacity: number];
-  [Data_RouteCommandType.ChangeBlendMode]: [blendMode: PIXI.BLEND_MODES];
+  [Data_RouteCommandType.ChangeBlendMode]: [blendMode: PIXI.BlendMode];
 
   [Data_RouteCommandType.PlaySE]: [se: AudioObject];
 

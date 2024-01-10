@@ -159,10 +159,10 @@ declare const enum Data_ConditionalBranchType {
   Gold,
   Item,
   Weapon,
-  Armor0,
-  Button1,
-  Script2,
-  Vehicle3,
+  Armor,
+  Button,
+  Script,
+  Vehicle,
 }
 
 declare const enum Data_CommandSwitchState {
@@ -717,8 +717,6 @@ declare const enum Data_ChangeSkillOperator {
 }
 
 declare type Data_CommandParameters = {
-  [key: Data_CommandType]: unknown[];
-} & {
   [Data_CommandType.End]: [];
 
   [Data_CommandType.ShowText]: [

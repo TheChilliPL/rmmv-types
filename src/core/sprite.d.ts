@@ -27,10 +27,8 @@ declare class Sprite extends PIXI.Sprite {
 
   get bitmap(): Bitmap;
   set bitmap(value: Bitmap);
-  override get width(): number;
-  override set width(value: number);
-  override get height(): number;
-  override set height(value: number);
+  override width: number;
+  override height: number;
   get opacity(): number;
   set opacity(value: number);
 

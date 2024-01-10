@@ -15,7 +15,10 @@ declare class WebAudio implements GameAudioBuffer {
   static _initialized: boolean;
   static _unlocked: boolean;
 
-  static initialize(noAudio: boolean = false): boolean;
+  /**
+   * @param noAudio Default: false
+   */
+  static initialize(noAudio?: boolean): boolean;
 
   static canPlayOgg(): boolean;
   static canPlayM4a(): boolean;

@@ -1,0 +1,10 @@
+/// <reference path="./storage_manager.d.ts"/>
+/// <reference path="./config_manager.d.ts"/>
+/// <reference path="./text_manager.d.ts"/>
+/// <reference path="./audio_manager.d.ts"/>
+/// <reference path="./battle_manager.d.ts"/>
+/// <reference path="./image_manager.d.ts"/>
+/// <reference path="./data_manager.d.ts"/>
+/// <reference path="./sound_manager.d.ts"/>
+/// <reference path="./plugin_manager.d.ts"/>
+/// <reference path="./scene_manager.d.ts"/>

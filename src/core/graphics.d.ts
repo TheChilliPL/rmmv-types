@@ -10,7 +10,7 @@ declare class Graphics {
   static initialize(
     width?: number,
     height?: number,
-    type?: GraphicsRendererType
+    type?: GraphicsRendererType,
   ): void;
 
   static _width: number;
@@ -50,10 +50,10 @@ declare class Graphics {
 
   static frameCount: number;
 
-  static BLEND_NORMAL: PIXI.BLEND_MODES.NORMAL;
-  static BLEND_ADD: PIXI.BLEND_MODES.ADD;
-  static BLEND_MULTIPLY: PIXI.BLEND_MODES.MULTIPLY;
-  static BLEND_SCREEN: PIXI.BLEND_MODES.SCREEN;
+  static BLEND_NORMAL: PIXI.BlendMode.NORMAL;
+  static BLEND_ADD: PIXI.BlendMode.ADD;
+  static BLEND_MULTIPLY: PIXI.BlendMode.MULTIPLY;
+  static BLEND_SCREEN: PIXI.BlendMode.SCREEN;
 
   static tickStart(): void;
   static tickEnd(): void;

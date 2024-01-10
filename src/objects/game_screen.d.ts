@@ -100,7 +100,7 @@ declare class Game_Screen {
     scaleX: number,
     scaleY: number,
     opacity: number,
-    blendMode: PIXI.BLEND_MODES,
+    blendMode: PIXI.BlendMode,
   ): void;
   movePicture(
     pictureId: number,
@@ -110,7 +110,7 @@ declare class Game_Screen {
     scaleX: number,
     scaleY: number,
     opacity: number,
-    blendMode: PIXI.BLEND_MODES,
+    blendMode: PIXI.BlendMode,
     duration: number,
   ): void;
   rotatePicture(pictureId: number, speed: number): void;

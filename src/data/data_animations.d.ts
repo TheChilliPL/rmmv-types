@@ -30,7 +30,7 @@ declare type Data_AnimationCell = [
   mirror: Data_AnimationCellMirror,
   /** Range from 0 to 255. */
   opacity: number,
-  blendMode: PIXI.BLEND_MODES,
+  blendMode: PIXI.BlendMode,
 ];
 
 declare type Data_AnimationFrame = Data_AnimationCell[];

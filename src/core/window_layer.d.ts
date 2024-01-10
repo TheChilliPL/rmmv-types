@@ -16,7 +16,10 @@ declare class WindowLayer extends PIXI.Container {
 
   update(): void;
 
-  _canvasClearWindowRect(renderer: PIXI.CanvasRenderer, window: Window): void;
+  _canvasClearWindowRect(
+    renderer: PIXI.CanvasRenderer,
+    window: DomWindow,
+  ): void;
 
-  _maskWindow(window: Window, shift: Point): void;
+  _maskWindow(window: DomWindow, shift: Point): void;
 }

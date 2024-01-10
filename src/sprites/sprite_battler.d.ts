@@ -2,7 +2,7 @@
  * The superclass of {@link Sprite_Actor} and {@link Sprite_Enemy}.
  */
 declare class Sprite_Battler<
-  TBattler extends Game_Battler,
+  TBattler extends Game_Battler = Game_Battler,
 > extends Sprite_Base {
   constructor(battler: TBattler);
   override initialize(battler: TBattler): void;

@@ -11,7 +11,7 @@ declare class Game_Picture {
   _scaleX: number;
   _scaleY: number;
   _opacity: number;
-  _blendMode: PIXI.BLEND_MODES;
+  _blendMode: PIXI.BlendMode;
   _tone: Tone;
   _angle: number;
 
@@ -32,7 +32,7 @@ declare class Game_Picture {
   scaleX(): number;
   scaleY(): number;
   opacity(): number;
-  blendMode(): PIXI.BLEND_MODES;
+  blendMode(): PIXI.BlendMode;
   tone(): Tone;
   angle(): number;
 
@@ -49,7 +49,7 @@ declare class Game_Picture {
     scaleX: number,
     scaleY: number,
     opacity: number,
-    blendMode: PIXI.BLEND_MODES,
+    blendMode: PIXI.BlendMode,
   ): void;
   move(
     origin: number,
@@ -58,7 +58,7 @@ declare class Game_Picture {
     scaleX: number,
     scaleY: number,
     opacity: number,
-    blendMode: PIXI.BLEND_MODES,
+    blendMode: PIXI.BlendMode,
     duration: number,
   ): void;
   rotate(speed: number): void;

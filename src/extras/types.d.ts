@@ -1,6 +1,6 @@
 declare type Sign = -1 | 0 | 1;
 
-type Maybe<T> = T | null;
+declare type Maybe<T> = T | null;
 
 type Two<T> = [T, T];
 type Three<T> = [T, T, T];

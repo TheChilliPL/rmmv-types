@@ -1,8 +1,8 @@
-declare interface Plugin {
+declare interface RmmvPlugin {
   name: string;
   status: boolean;
   description: string;
   parameters: Record<string, string>;
 }
 
-declare var $plugins: Plugin[];
+declare var $plugins: RmmvPlugin[];

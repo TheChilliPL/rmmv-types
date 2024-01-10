@@ -9,7 +9,7 @@
     "outDir": "dist/",
     "skipLibCheck": true, // TODO fix Window problem.. somehow
     "lib": [
-      "ES6"
+      "ES6", "DOM"
     ],
     "noImplicitOverride": true,
 //    "noImplicitAbstractOverride": true, // https://github.com/microsoft/TypeScript/issues/47250

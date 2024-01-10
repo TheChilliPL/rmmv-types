@@ -12,7 +12,7 @@ declare class Game_CharacterBase {
   _moveSpeed: number;
   _moveFrequency: number;
   _opacity: number;
-  _blendMode: PIXI.BLEND_MODES;
+  _blendMode: PIXI.BlendMode;
   _direction: Dir4;
   _pattern: number;
   _priorityType: Data_EventPriorityType;
@@ -44,8 +44,8 @@ declare class Game_CharacterBase {
   setMoveFrequency(moveFrequency: number): void;
   opacity(): number;
   setOpacity(opacity: number): void;
-  blendMode(): PIXI.BLEND_MODES;
-  setBlendMode(blendMode: PIXI.BLEND_MODES): void;
+  blendMode(): PIXI.BlendMode;
+  setBlendMode(blendMode: PIXI.BlendMode): void;
   isNormalPriority(): boolean;
   setPriorityType(priorityType: Data_EventPriorityType): void;
 

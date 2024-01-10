@@ -1,6 +1,5 @@
 declare namespace PIXI {
-  // TODO Disallow reverse lookup
-  declare enum BLEND_MODES {
+  const enum BlendMode {
     NORMAL,
     ADD,
     MULTIPLY,
@@ -20,6 +19,6 @@ declare namespace PIXI {
     LUMINOSITY,
     NORMAL_NPM,
     ADD_NPM,
-    SCREEN_NPM
+    SCREEN_NPM,
   }
 }

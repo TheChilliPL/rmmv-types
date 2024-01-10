@@ -17,7 +17,7 @@ let effect = Data_BattlerEffectType.Whiten;
 let haha: Haha = LOL;
 
 let aa = new Game_Picture();
-aa._blendMode = PIXI.BLEND_MODES.NORMAL;
+aa._blendMode = PIXI.BlendMode.NORMAL;
 
 new haha(2);
 
@@ -92,3 +92,7 @@ int.gameDataOperand(
 int.operateVariable(1, Data_ControlVariablesOperationType.Set, 2);
 
 let actorSprite = new Sprite_Actor(new Game_Actor(1));
+
+function xdddd(params: Data_CommandParameters, type: Data_CommandType) {
+  let b = params[type];
+}
