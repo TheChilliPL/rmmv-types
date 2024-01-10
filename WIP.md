@@ -8,4 +8,4 @@
 - rpg_scenes.js → scenes/: 2690/2690
 
 ## In progress!
-- rpg_windows.js → windows/: 0/6025
+- rpg_windows.js → windows/: 703/6025
