@@ -10,7 +10,7 @@ declare class Game_Party extends Game_Unit<Game_Actor> {
   static ABILITY_GOLD_DOUBLE: 4;
   static ABILITY_DROP_ITEM_DOUBLE: 5;
 
-  override initialize();
+  initialize();
 
   _gold: number;
   _steps: number;

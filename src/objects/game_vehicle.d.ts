@@ -3,7 +3,7 @@
  */
 declare class Game_Vehicle extends Game_Character {
   constructor(type: Data_VehicleType);
-  override initialize(constructorParams: unknown[]): void;
+  initialize(constructorParams: unknown[]): void;
 
   _type: Data_VehicleType;
 

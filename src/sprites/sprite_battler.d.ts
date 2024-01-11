@@ -5,7 +5,7 @@ declare class Sprite_Battler<
   TBattler extends Game_Battler = Game_Battler,
 > extends Sprite_Base {
   constructor(battler: TBattler);
-  override initialize(constructorParams: unknown[]): void;
+  initialize(constructorParams: unknown[]): void;
 
   /**
    * @remarks

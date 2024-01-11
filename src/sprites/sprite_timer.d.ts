@@ -3,7 +3,7 @@
  */
 declare class Sprite_Timer extends Sprite {
   constructor();
-  override initialize(constructorParams: unknown[]): void;
+  initialize(constructorParams: unknown[]): void;
 
   _seconds: number;
 

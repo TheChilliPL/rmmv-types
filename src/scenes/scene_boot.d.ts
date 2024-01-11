@@ -2,7 +2,7 @@
  * The scene class for initializing the entire game.
  */
 declare class Scene_Boot extends Scene_Base {
-  override initialize(constructorParams: unknown[]): void;
+  initialize(constructorParams: unknown[]): void;
 
   _startDate: number;
 

@@ -5,7 +5,7 @@ declare class Game_Troop extends Game_Unit<Game_Enemy> {
   static LETTER_TABLE_HALF: string[];
   static LETTER_TABLE_FULL: string[];
 
-  override initialize(constructorParams: unknown[]): void;
+  initialize(constructorParams: unknown[]): void;
 
   _interpreter: Game_Interpreter;
 

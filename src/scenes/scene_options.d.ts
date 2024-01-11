@@ -2,7 +2,7 @@
  * The scene class of the options screen.
  */
 declare class Scene_Options extends Scene_MenuBase {
-  override initialize(constructorParams: unknown[]): void;
+  initialize(constructorParams: unknown[]): void;
 
   override _optionsWindow: Window_Options;
 

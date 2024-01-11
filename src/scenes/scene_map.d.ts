@@ -2,7 +2,7 @@
  * The scene class of the map screen.
  */
 declare class Scene_Map extends Scene_Base {
-  override initialize(constructorParams: unknown[]): void;
+  initialize(constructorParams: unknown[]): void;
 
   _waitCount: number;
   _encounterEffectDuration: number;

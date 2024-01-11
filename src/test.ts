@@ -70,7 +70,7 @@ function f(data: Data_CommandParameters) {
   let b = data[Data_CommandType.ConditionalBranch];
 }
 
-let int = new Game_Interpreter();
+let int = new Game_Interpreter(1);
 
 int.gameDataOperand(Data_ControlVariablesByGameDataOperandType.Item, 1);
 int.gameDataOperand(
@@ -95,4 +95,8 @@ let actorSprite = new Sprite_Actor(new Game_Actor(1));
 
 function xdddd(params: Data_CommandParameters, type: Data_CommandType) {
   let b = params[type];
+}
+
+function hmuxvutmr(wc: Window_Command) {
+  wc.addCommand("a", "a")
 }

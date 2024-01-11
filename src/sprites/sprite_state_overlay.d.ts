@@ -2,7 +2,7 @@
  * The sprite for displaying an overlay image for a state.
  */
 declare class Sprite_StateOverlay extends Sprite_Base {
-  override initialize(constructorParams: unknown[]): void;
+  initialize(constructorParams: unknown[]): void;
 
   _battler: Maybe<Game_Battler>;
   _overlayIndex: number;

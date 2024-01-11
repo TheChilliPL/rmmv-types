@@ -2,7 +2,7 @@
  * The sprite for displaying a character.
  */
 declare class Sprite_Character extends Sprite_Base {
-  override initialize(constructorParams: unknown[]): void;
+  initialize(constructorParams: unknown[]): void;
 
   _character: Game_Character;
   _balloonDuration: number;

@@ -2,7 +2,7 @@
  * The scene class of the game over screen.
  */
 declare class Scene_Gameover extends Scene_Base {
-  override initialize(constructorParams: unknown[]): void;
+  initialize(constructorParams: unknown[]): void;
 
   _backSprite: Sprite;
 
