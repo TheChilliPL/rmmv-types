@@ -15,7 +15,7 @@ declare class Window_Command<TExt = unknown> extends Window_Selectable {
 
   windowWidth(): number;
   windowHeight(): number;
-  override numVisibleRows(): number;
+  numVisibleRows(): number;
   override maxItems(): number;
 
   clearCommandList(): void;
@@ -41,5 +41,5 @@ declare class Window_Command<TExt = unknown> extends Window_Selectable {
   override isOkEnabled(): boolean;
   override callOkHandler(): void;
 
-  override refresh();
+  override refresh(): void;
 }

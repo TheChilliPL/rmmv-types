@@ -252,8 +252,8 @@ declare class Game_BattlerBase {
   meetsUsableItemConditions(item: Data_UsableItem): boolean;
   meetsSkillConditions(skill: Data_Skill): boolean;
   meetsItemConditions(item: Data_UsableItem): boolean;
-  canUse(item: Data_UsableItem): boolean;
-  canEquip(item: Data_EquipItem): boolean;
+  canUse(item: Maybe<Data_UsableItem>): boolean;
+  canEquip(item: Maybe<Data_EquipItem>): boolean;
   canEquipWeapon(item: Data_Weapon): boolean;
   canEquipArmor(item: Data_Armor): boolean;
 

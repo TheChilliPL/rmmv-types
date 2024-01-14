@@ -90,8 +90,8 @@ declare class Window_Base extends Window {
     x: number,
     y: number,
     maxWidth?: number,
-    align?: string,
-  ): void; // TODO ?
+    align?: CanvasTextAlign,
+  ): void;
   textWidth(text: string): number;
   drawTextEx(text: string, x: number, y: number): number;
   convertEscapeCharacters(text: string): string;

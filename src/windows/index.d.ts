@@ -1,5 +1,9 @@
 /// <reference path="./window_base.d.ts"/>
 /// <reference path="./window_command.d.ts"/>
+/// <reference path="./window_equip_command.d.ts"/>
+/// <reference path="./window_equip_item.d.ts"/>
+/// <reference path="./window_equip_slot.d.ts"/>
+/// <reference path="./window_equip_status.d.ts"/>
 /// <reference path="./window_gold.d.ts"/>
 /// <reference path="./window_help.d.ts"/>
 /// <reference path="./window_horz_command.d.ts"/>
@@ -8,5 +12,9 @@
 /// <reference path="./window_menu_actor.d.ts"/>
 /// <reference path="./window_menu_command.d.ts"/>
 /// <reference path="./window_menu_status.d.ts"/>
+/// <reference path="./window_options.d.ts"/>
 /// <reference path="./window_selectable.d.ts"/>
+/// <reference path="./window_skill_list.d.ts"/>
+/// <reference path="./window_skill_status.d.ts"/>
 /// <reference path="./window_skill_type.d.ts"/>
+/// <reference path="./window_status.d.ts"/>
