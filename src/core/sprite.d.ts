@@ -3,7 +3,7 @@ declare class Sprite extends PIXI.Sprite {
 
   static voidFilter: PIXI.filters.VoidFilter;
 
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   /**
    * Not sure whether that exists in {@link PIXI.Sprite}?

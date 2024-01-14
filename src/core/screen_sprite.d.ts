@@ -1,5 +1,5 @@
 declare class ScreenSprite extends PIXI.Container {
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _graphics: PIXI.Graphics;
   opacity: number;

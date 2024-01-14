@@ -3,7 +3,7 @@
  */
 declare class Window_Selectable extends Window_Base {
   constructor(x: number, y: number, width: number, height: number);
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _index: number;
   _cursorFixed: boolean;
@@ -103,7 +103,7 @@ declare class Window_Selectable extends Window_Base {
   callUpdateHelp(): void;
   updateHelp(): void;
 
-  setHelpWindowItem(item: Data_ItemBase): void;
+  setHelpWindowItem(item: Maybe<Data_ItemBase>): void;
   isCurrentItemEnabled(): boolean;
 
   drawAllItems(): void;

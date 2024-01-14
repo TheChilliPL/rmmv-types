@@ -9,7 +9,7 @@
  */
 declare class Sprite_Base extends Sprite {
   constructor();
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _animationSprites: Sprite[];
   _effectTarget: Sprite_Base;
@@ -24,7 +24,7 @@ declare class Sprite_Base extends Sprite {
   startAnimation(
     animation: Sprite_Animation,
     mirror: boolean,
-    delay: number
+    delay: number,
   ): void;
   isAnimationPlaying(): boolean;
 }

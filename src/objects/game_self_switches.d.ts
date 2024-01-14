@@ -12,7 +12,7 @@ declare type SelfSwitchKeyStr = `${number},${number},${SelfSwitchChar}`;
  * The game object class for self switches.
  */
 declare class Game_SelfSwitches {
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _data: Record<SelfSwitchKeyStr, boolean>;
 

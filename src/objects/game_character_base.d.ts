@@ -3,7 +3,7 @@
  * coordinates and images, shared by all characters.
  */
 declare class Game_CharacterBase {
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _x: number;
   _y: number;

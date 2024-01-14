@@ -2,7 +2,7 @@
  * The scene class of the battle screen.
  */
 declare class Scene_Battle extends Scene_Base {
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _spriteset: Spriteset_Battle;
   override _windowLayer: WindowLayer;

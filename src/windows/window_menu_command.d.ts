@@ -5,7 +5,7 @@ declare class Window_MenuCommand {
   static _lastCommandSymbol: Maybe<string>;
 
   constructor(x: number, y: number);
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   initCommandPosition(): void;
 

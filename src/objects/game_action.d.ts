@@ -25,7 +25,7 @@ declare class Game_Action {
    * @param forcing Default: false
    */
   constructor(subject: Game_Battler, forcing?: boolean);
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   clear();
   setSubject(subject: Game_Battler): void;
@@ -34,9 +34,7 @@ declare class Game_Action {
   friendsUnit(): Game_Unit;
   opponentsUnit(): Game_Unit;
 
-  setEnemyAction(
-    action: Data_EnemyAction,
-  ): void;
+  setEnemyAction(action: Data_EnemyAction): void;
 
   setAttack(): void;
   setGuard(): void;

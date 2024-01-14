@@ -2,7 +2,7 @@
  * The wrapper class for a follower array.
  */
 declare class Game_Followers {
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _visible: boolean;
   _gathering: boolean;

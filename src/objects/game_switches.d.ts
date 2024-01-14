@@ -2,7 +2,7 @@
  * The game object class for switches.
  */
 declare class Game_Switches {
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _data: OneIndexedArray<boolean>;
 

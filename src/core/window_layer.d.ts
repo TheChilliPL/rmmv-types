@@ -1,5 +1,5 @@
 declare class WindowLayer extends PIXI.Container {
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _width: number;
   _height: number;

@@ -49,7 +49,7 @@ declare class Game_Character extends Game_CharacterBase {
   static ROUTE_PLAY_SE: Data_RouteCommandType.PlaySE;
   static ROUTE_SCRIPT: Data_RouteCommandType.Script;
 
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _moveRouteForcing: boolean;
   _moveRoute: Maybe<Data_EventMoveRoute>;

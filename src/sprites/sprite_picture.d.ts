@@ -3,7 +3,7 @@
  */
 declare class Sprite_Picture extends Sprite {
   constructor(pictureId: number);
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _pictureId: number;
   _pictureName: string;

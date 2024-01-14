@@ -2,7 +2,7 @@
  * The superclass of Scene_Item and Scene_Skill.
  */
 declare class Scene_ItemBase extends Scene_MenuBase {
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _itemWindow?: Window_Selectable;
   _actorWindow?: Window_MenuActor;

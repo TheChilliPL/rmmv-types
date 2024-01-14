@@ -9,7 +9,7 @@ declare interface Command<TExt = unknown> {
  * The superclass of window for selecting a command.
  */
 declare class Window_Command<TExt = unknown> extends Window_Selectable {
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _list: Command<TExt | undefined>[];
 

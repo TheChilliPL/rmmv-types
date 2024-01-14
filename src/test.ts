@@ -98,5 +98,5 @@ function xdddd(params: Data_CommandParameters, type: Data_CommandType) {
 }
 
 function hmuxvutmr(wc: Window_Command) {
-  wc.addCommand("a", "a")
+  wc.addCommand("a", "a", true, 2);
 }

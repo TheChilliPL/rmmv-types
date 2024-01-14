@@ -2,7 +2,7 @@
  * The sprite for displaying a popup damage.
  */
 declare class Sprite_Damage extends Sprite {
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _duration: number;
   _flashColor: RGBAColor;

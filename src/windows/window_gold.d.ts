@@ -3,7 +3,7 @@
  */
 declare class Window_Gold extends Window_Base {
   constructor(x: number, y: number);
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   windowWidth(): number;
   windowHeight(): number;

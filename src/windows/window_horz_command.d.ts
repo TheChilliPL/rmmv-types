@@ -3,7 +3,7 @@
  */
 declare class Window_HorzCommand extends Window_Command {
   constructor(x: number, y: number);
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   override numVisibleRows(): number;
   override maxCols(): number;

@@ -3,7 +3,7 @@
  */
 declare class Game_Actor extends Game_Battler {
   constructor(actorId: number);
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _actorId: number;
   _name: string;
@@ -133,7 +133,7 @@ declare class Game_Actor extends Game_Battler {
   override startAnimation(
     animationId: number,
     mirror: boolean,
-    delay: number
+    delay: number,
   ): void;
   override performActionStart(action: Game_Action): void;
   override performAction(action: Game_Action): void;

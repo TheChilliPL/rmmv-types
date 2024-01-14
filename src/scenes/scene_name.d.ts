@@ -2,7 +2,7 @@
  * The scene class of name input screen.
  */
 declare class Scene_Name extends Scene_MenuBase {
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _actorId: number;
   _maxLength: number;

@@ -2,7 +2,7 @@
  * The scene class of the load screen.
  */
 declare class Scene_Load extends Scene_File {
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _loadSuccess: boolean;
 

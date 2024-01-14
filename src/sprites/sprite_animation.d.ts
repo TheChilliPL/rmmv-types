@@ -3,7 +3,7 @@
  */
 declare class Sprite_Animation extends Sprite {
   constructor();
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _reduceArtifacts: boolean;
   _target: Maybe<Sprite_Base>;
@@ -30,7 +30,7 @@ declare class Sprite_Animation extends Sprite {
     target: Sprite_Base,
     animation: Data_Animation,
     mirror: boolean,
-    delay: number
+    delay: number,
   ): void;
   remove(): void;
   setupRate(): void;

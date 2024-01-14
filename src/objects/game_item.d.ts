@@ -4,7 +4,7 @@
  */
 declare class Game_Item {
   constructor(item: Data_ItemBase);
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _dataClass: string;
   _itemId: number;

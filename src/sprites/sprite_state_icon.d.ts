@@ -6,7 +6,7 @@ declare class Sprite_StateIcon extends Sprite {
   static _iconHeight: number;
 
   constructor();
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _battler: Maybe<Game_Battler>;
   _iconIndex: number;

@@ -30,7 +30,7 @@ declare interface Sprite_ActorMotion {
 declare class Sprite_Actor extends Sprite_Battler<Game_Actor> {
   static MOTIONS: Record<Sprite_ActorMotionType, Sprite_ActorMotion>;
 
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _actor: Game_Actor;
   _battlerName: string;

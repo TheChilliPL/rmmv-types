@@ -1,5 +1,5 @@
 declare class Window extends PIXI.Container {
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _isWindow: true;
   _windowskin: Maybe<Bitmap>;

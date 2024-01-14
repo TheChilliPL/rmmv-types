@@ -2,7 +2,7 @@
  * The set of sprites on the map screen.
  */
 declare class Spriteset_Map extends Spriteset_Base {
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _parallax: TilingSprite;
   /**

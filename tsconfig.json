@@ -4,10 +4,9 @@
     "moduleResolution": "Node",
     "target": "ES5",
     "sourceMap": true,
-    "strict": true,
+//    "strict": true,
     "baseUrl": "src/",
     "outDir": "dist/",
-    "skipLibCheck": true, // TODO fix Window problem.. somehow
     "lib": [
       "ES6", "DOM"
     ],

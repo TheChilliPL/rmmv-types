@@ -17,7 +17,7 @@ declare type ChoiceCallback = (choice: number) => void;
  * or selections, etc.
  */
 declare class Game_Message {
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
   clear(): void;
 
   _texts: string[];

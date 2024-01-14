@@ -1,0 +1,12 @@
+/// <reference path="./window_base.d.ts"/>
+/// <reference path="./window_command.d.ts"/>
+/// <reference path="./window_gold.d.ts"/>
+/// <reference path="./window_help.d.ts"/>
+/// <reference path="./window_horz_command.d.ts"/>
+/// <reference path="./window_item_category.d.ts"/>
+/// <reference path="./window_item_list.d.ts"/>
+/// <reference path="./window_menu_actor.d.ts"/>
+/// <reference path="./window_menu_command.d.ts"/>
+/// <reference path="./window_menu_status.d.ts"/>
+/// <reference path="./window_selectable.d.ts"/>
+/// <reference path="./window_skill_type.d.ts"/>

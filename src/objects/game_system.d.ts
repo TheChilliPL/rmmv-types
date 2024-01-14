@@ -2,7 +2,7 @@
  * The game object class for the system data.
  */
 declare class Game_System {
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _saveEnabled: boolean;
   _menuEnabled: boolean;

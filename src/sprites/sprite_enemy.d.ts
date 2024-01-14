@@ -2,7 +2,7 @@
  * The sprite for displaying an enemy.
  */
 declare class Sprite_Enemy extends Sprite_Battler<Game_Enemy> {
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _enemy: Game_Enemy;
   _appeared: boolean;

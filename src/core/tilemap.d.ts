@@ -16,7 +16,7 @@ declare class Tilemap extends PIXI.Container {
   static WALL_AUTOTILE_TABLE: AutotileTable;
   static WATERFALL_AUTOTILE_TABLE: AutotileTable;
 
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _margin: number;
   _width: number;

@@ -17,7 +17,7 @@ declare class Window_Base extends Window {
   static _faceHeight: number;
 
   constructor(x: number, y: number, width: number, height: number);
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   windowskin: Bitmap;
   padding: number;
@@ -85,7 +85,13 @@ declare class Window_Base extends Window {
   changeTextColor(color: string): void;
   changePaintOpacity(enabled: boolean): void;
 
-  drawText(text: string, x: number, y: number, maxWidth?: number, align?: string): void; // TODO ?
+  drawText(
+    text: string,
+    x: number,
+    y: number,
+    maxWidth?: number,
+    align?: string,
+  ): void; // TODO ?
   textWidth(text: string): number;
   drawTextEx(text: string, x: number, y: number): number;
   convertEscapeCharacters(text: string): string;
@@ -104,28 +110,77 @@ declare class Window_Base extends Window {
   calcTextHeight(textState: Data_TextState, all: boolean): number;
 
   drawIcon(iconIndex: number, x: number, y: number): void;
-  drawFace(faceName: string, faceIndex: number, x: number, y: number, width?: number, height?: number): void;
-  drawCharacter(characterName: string, characterIndex: number, x: number, y: number): void;
-  drawGauge(x: number, y: number, width: number, rate: number, color1: string, color2: string): void;
+  drawFace(
+    faceName: string,
+    faceIndex: number,
+    x: number,
+    y: number,
+    width?: number,
+    height?: number,
+  ): void;
+  drawCharacter(
+    characterName: string,
+    characterIndex: number,
+    x: number,
+    y: number,
+  ): void;
+  drawGauge(
+    x: number,
+    y: number,
+    width: number,
+    rate: number,
+    color1: string,
+    color2: string,
+  ): void;
 
   hpColor(actor: Game_Actor): string;
   mpColor(actor: Game_Actor): string;
   tpColor(actor: Game_Actor): string;
 
   drawActorCharacter(actor: Game_Actor, x: number, y: number): void;
-  drawActorFace(actor: Game_Actor, x: number, y: number, width?: number, height?: number): void;
+  drawActorFace(
+    actor: Game_Actor,
+    x: number,
+    y: number,
+    width?: number,
+    height?: number,
+  ): void;
   drawActorName(actor: Game_Actor, x: number, y: number, width?: number): void;
   drawActorClass(actor: Game_Actor, x: number, y: number, width?: number): void;
-  drawActorNickname(actor: Game_Actor, x: number, y: number, width?: number): void;
+  drawActorNickname(
+    actor: Game_Actor,
+    x: number,
+    y: number,
+    width?: number,
+  ): void;
   drawActorLevel(actor: Game_Actor, x: number, y: number): void;
   drawActorIcons(actor: Game_Actor, x: number, y: number, width?: number): void;
-  drawCurrentAndMax(current: number, max: number, x: number, y: number, width: number, color1: string, color2: string): void;
+  drawCurrentAndMax(
+    current: number,
+    max: number,
+    x: number,
+    y: number,
+    width: number,
+    color1: string,
+    color2: string,
+  ): void;
   drawActorHp(actor: Game_Actor, x: number, y: number, width?: number): void;
   drawActorMp(actor: Game_Actor, x: number, y: number, width?: number): void;
   drawActorTp(actor: Game_Actor, x: number, y: number, width?: number): void;
-  drawActorSimpleStatus(actor: Game_Actor, x: number, y: number, width?: number): void;
+  drawActorSimpleStatus(
+    actor: Game_Actor,
+    x: number,
+    y: number,
+    width?: number,
+  ): void;
   drawItemName(item: Data_Item, x: number, y: number, width?: number): void;
-  drawCurrencyValue(value: number, unit: string, x: number, y: number, width: number): void;
+  drawCurrencyValue(
+    value: number,
+    unit: string,
+    x: number,
+    y: number,
+    width: number,
+  ): void;
 
   paramchangeTextColor(change: Sign): string;
   setBackgroundType(type: number): void;

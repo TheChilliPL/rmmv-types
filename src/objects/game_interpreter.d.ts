@@ -3,7 +3,7 @@
  */
 declare class Game_Interpreter {
   constructor(depth: number);
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _depth: number;
   _branch: { [indent: number]: number };

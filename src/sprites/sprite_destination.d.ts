@@ -3,7 +3,7 @@
  */
 declare class Sprite_Destination extends Sprite {
   constructor();
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _frameCount: number;
 

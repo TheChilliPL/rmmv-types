@@ -4,7 +4,7 @@
  */
 declare class Game_CommonEvent {
   constructor(commonEventId: number);
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _commonEventId: number;
 

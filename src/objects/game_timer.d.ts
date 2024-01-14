@@ -2,7 +2,7 @@
  * The game object class for the timer.
  */
 declare class Game_Timer {
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _frames: number;
   _working: boolean;

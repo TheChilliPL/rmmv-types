@@ -3,7 +3,7 @@
  */
 declare class Window_Help extends Window_Base {
   constructor(numLines: number);
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _text: string;
 

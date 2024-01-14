@@ -3,7 +3,7 @@
  * determinants and map scrolling functions.
  */
 declare class Game_Player extends Game_Character {
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _vehicleType: Data_VehicleType | "walk";
   _vehicleGettingOn: boolean;
@@ -34,7 +34,7 @@ declare class Game_Player extends Game_Character {
     x: number,
     y: number,
     d: Dir4,
-    fadeType: Data_FadeType
+    fadeType: Data_FadeType,
   ): void;
   requestMapReload(): void;
   isTransferring(): boolean;
@@ -70,7 +70,7 @@ declare class Game_Player extends Game_Character {
     x: number,
     y: number,
     triggers: Data_EventTrigger[],
-    normal: boolean
+    normal: boolean,
   ): void;
 
   moveByInput(): void;

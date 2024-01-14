@@ -2,7 +2,7 @@
  * The game object class for an enemy.
  */
 declare class Game_Enemy extends Game_Battler {
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _enemyId: number;
   _letter: string;
@@ -63,7 +63,7 @@ declare class Game_Enemy extends Game_Battler {
   isActionValid(action: Data_EnemyAction): boolean;
   selectAction(
     actionList: Data_EnemyAction[],
-    ratingZero: number
+    ratingZero: number,
   ): Maybe<Data_EnemyAction>;
   selectAllActions(actionList: Data_EnemyAction[]): void;
   makeActions(): void;

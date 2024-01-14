@@ -3,7 +3,7 @@
  */
 declare class Spriteset_Base extends Sprite {
   constructor();
-  initialize(constructorParams: unknown[]): void;
+  initialize(...constructorParams: unknown[]): void;
 
   _tone: Tone;
   _baseSprite: Sprite;
