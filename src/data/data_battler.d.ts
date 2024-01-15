@@ -33,6 +33,23 @@ declare const enum Data_BattlerActionState {
   Done = "done",
 }
 
+/**
+ * @see Data_BattlerParams
+ */
+declare const enum Data_BattlerParamId {
+  MaxHp,
+  MaxMp,
+  Attack,
+  Defense,
+  MagicAttack,
+  MagicDefense,
+  Agility,
+  Luck,
+}
+
+/**
+ * @see Data_BattlerParamId
+ */
 declare type Data_BattlerParams = [
   /** Maximum hit points */
   mhp: number,
@@ -52,6 +69,25 @@ declare type Data_BattlerParams = [
   luk: number,
 ];
 
+/**
+ * @see Data_BattlerXParams
+ */
+declare const enum Data_BattlerXParamId {
+  Hit,
+  Evasion,
+  Critical,
+  CriticalEvasion,
+  MagicEvasion,
+  MagicReflection,
+  CounterAttack,
+  HpRegeneration,
+  MpRegeneration,
+  TpRegeneration,
+}
+
+/**
+ * @see Data_BattlerXParamId
+ */
 declare type Data_BattlerXParams = [
   /** Hit rate */
   hit: number,
@@ -65,7 +101,7 @@ declare type Data_BattlerXParams = [
   mev: number,
   /** Magic reflection rate */
   mrf: number,
-  /** Counter attack rate */
+  /** Counter-attack rate */
   cnt: number,
   /** HP regeneration rate */
   hrg: number,
@@ -75,6 +111,25 @@ declare type Data_BattlerXParams = [
   trg: number,
 ];
 
+/**
+ * @see Data_BattlerSParams
+ */
+declare const enum Data_BattlerSParamId {
+  TargetRate,
+  GuardEffect,
+  RecoveryEffect,
+  Pharmacology,
+  MpCostRate,
+  TpChargeRate,
+  PhysicalDamage,
+  MagicalDamage,
+  FloorDamage,
+  Experience,
+}
+
+/**
+ * @see Data_BattlerSParamId
+ */
 declare type Data_BattlerSParams = [
   /** Target rate */
   tgr: number,

@@ -721,21 +721,14 @@ declare type Data_ShowBattleAnimationParameters = [
   enemyId: number,
   animationId: number,
   all: boolean,
-] & (
-  | [
-    enemyId: number,
-    animationId: number,
-    all: false,
-  ]
-  | [
-    _unused: 0,
-    animationId: number,
-    all: true,
-  ]
-);
+] &
+  (
+    | [enemyId: number, animationId: number, all: false]
+    | [_unused: 0, animationId: number, all: true]
+  );
 
 declare type Data_CommandParameters = {
-  [key in Data_CommandType]?: unknown[]
+  [key in Data_CommandType]?: unknown[];
 } & {
   [Data_CommandType.End]: [];
 
@@ -992,7 +985,7 @@ declare type Data_CommandParameters = {
   ];
   [Data_CommandType.ChangeParameter]: [
     ...iterator: Data_IterateActorExParameters,
-    param: number,
+    param: Data_BattlerParamId,
     ...operation: Data_OperateValueParameters,
   ];
   [Data_CommandType.ChangeSkill]: [

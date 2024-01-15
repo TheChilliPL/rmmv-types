@@ -67,4 +67,10 @@ declare class Window extends PIXI.Container {
   _updateContents(): void;
   _updateArrows(): void;
   _updatePauseSign(): void;
+
+  /**
+   * @deprecated Possibly defined by PIXI, but overridden with a different type in MV.
+   * Best not to use this, except for overrides.
+   */
+  name: any;
 }

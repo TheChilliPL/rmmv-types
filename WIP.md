@@ -8,4 +8,4 @@
 - rpg_scenes.js → scenes/: 2690/2690
 
 ## In progress!
-- rpg_windows.js → windows/: middle of Window_ShopStatus
+- rpg_windows.js → windows/: after Window_NameInput

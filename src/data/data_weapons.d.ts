@@ -10,7 +10,7 @@ declare interface Data_Weapon extends Data_ItemBase {
   iconIndex: number;
   name: string;
   note: string;
-  params: Nine<number>;
+  params: Data_BattlerParams;
   price: number;
   /** Weapon type ID. */
   wtypeId: number;

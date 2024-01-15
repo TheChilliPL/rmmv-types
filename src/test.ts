@@ -100,3 +100,11 @@ function xdddd(params: Data_CommandParameters, type: Data_CommandType) {
 function hmuxvutmr(wc: Window_Command) {
   wc.addCommand("a", "a", true, 2);
 }
+
+function nuveurvmrt(params: Data_BattlerParams, xparams: Data_BattlerXParams) {
+  let b = params[Data_BattlerParamId.Attack];
+}
+
+function gmyhbcyrmb(wss: Window_NameEdit) {
+  let w = wss as Window;
+}
