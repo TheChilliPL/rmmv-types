@@ -10,7 +10,7 @@ declare type SavefileCharacter = [
 
 declare type SavefileFace = [faceName: string, faceIndex: number];
 
-declare interface GlobalInfo {
+declare interface SavefileInfo {
   globalId: string;
   title: string;
   characters: SavefileCharacter[];
@@ -19,7 +19,7 @@ declare interface GlobalInfo {
   timestamp: number;
 }
 
-declare interface SaveData {
+declare interface SavefileData {
   system: Game_System;
   screen: Game_Screen;
   timer: Game_Timer;
@@ -101,26 +101,26 @@ declare class DataManager {
   static setupBattleTest(): void;
   static setupEventTest(): void;
 
-  static loadGlobalInfo(): OneIndexedArray<GlobalInfo>;
-  static saveGlobalInfo(info: OneIndexedArray<GlobalInfo>): void;
+  static loadGlobalInfo(): OneIndexedArray<SavefileInfo>;
+  static saveGlobalInfo(info: OneIndexedArray<SavefileInfo>): void;
 
   static isThisGameFile(savefileId: number): boolean;
   static isAnySavefileExists(): boolean;
   static latestSavefileId(): number;
 
   static loadAllSavefileImages(): void;
-  static loadSavefileImages(info: GlobalInfo): void;
+  static loadSavefileImages(info: SavefileInfo): void;
 
   static maxSavefiles(): number;
   static saveGame(savefileId: number): boolean;
   static loadGame(savefileId: number): boolean;
-  static loadSavefileInfo(savefileId: number): Maybe<GlobalInfo>;
+  static loadSavefileInfo(savefileId: number): Maybe<SavefileInfo>;
   static lastAccessedSavefileId(): number;
   static saveGameWithoutRescue(savefileId: number): boolean;
   static loadGameWithoutRescue(savefileId: number): boolean;
   static selectSavefileForNewGame(): void;
 
-  static makeSavefileInfo(): GlobalInfo;
-  static makeSaveContents(): SaveData;
-  static extractSaveContents(contents: SaveData): void;
+  static makeSavefileInfo(): SavefileInfo;
+  static makeSaveContents(): SavefileData;
+  static extractSaveContents(contents: SavefileData): void;
 }
