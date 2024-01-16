@@ -735,8 +735,8 @@ declare type Data_CommandParameters = {
   [Data_CommandType.ShowText]: [
     faceName: string,
     faceIndex: number,
-    background: MessageBackground,
-    positionType: MessagePositionType,
+    background: Data_MessageBackground,
+    positionType: Data_MessagePositionType,
   ];
   [Data_CommandType.TextData]: [string];
   [Data_CommandType.ShowChoices]: [

@@ -5,12 +5,13 @@
     "target": "ES5",
     "sourceMap": true,
 //    "strict": true,
+    "strictFunctionTypes": true,
     "baseUrl": "src/",
     "outDir": "dist/",
     "lib": [
       "ES6", "DOM"
     ],
-    "noImplicitOverride": true,
+    "noImplicitOverride": true
 //    "noImplicitAbstractOverride": true, // https://github.com/microsoft/TypeScript/issues/47250
   },
   "include": [

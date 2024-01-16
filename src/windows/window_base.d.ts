@@ -93,6 +93,9 @@ declare class Window_Base extends Window {
     align?: CanvasTextAlign,
   ): void;
   textWidth(text: string): number;
+  /**
+   * @returns The width of the drawn text in pixels.
+   */
   drawTextEx(text: string, x: number, y: number): number;
   convertEscapeCharacters(text: string): string;
   actorName(actorId: number): string;

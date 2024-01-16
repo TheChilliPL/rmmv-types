@@ -1,10 +1,10 @@
-declare const enum MessageBackground { //TODO MOVE TO WINDOW_BASE
+declare const enum Data_MessageBackground {
   Normal,
   Dimmed,
   Transparent,
 }
 
-declare const enum MessagePositionType {
+declare const enum Data_MessagePositionType {
   Top,
   Middle,
   Bottom,
@@ -24,12 +24,12 @@ declare class Game_Message {
   _choices: string[];
   _faceName: string;
   _faceIndex: number;
-  _background: MessageBackground;
-  _positionType: MessagePositionType;
+  _background: Data_MessageBackground;
+  _positionType: Data_MessagePositionType;
   _choiceDefaultType: number;
   _choiceCancelType: number;
-  _choiceBackground: MessageBackground;
-  _choicePositionType: MessagePositionType;
+  _choiceBackground: Data_MessageBackground;
+  _choicePositionType: Data_MessagePositionType;
   _numInputVariableId: number;
   _numInputMaxDigits: number;
   _itemChoiceVariableId: number;
@@ -42,8 +42,8 @@ declare class Game_Message {
   choices(): string[];
   faceName(): string;
   faceIndex(): number;
-  background(): MessageBackground;
-  positionType(): MessagePositionType;
+  background(): Data_MessageBackground;
+  positionType(): Data_MessagePositionType;
 
   choiceDefaultType(): number;
   choiceCancelType(): number;
@@ -61,11 +61,11 @@ declare class Game_Message {
 
   add(text: string): void;
   setFaceImage(faceName: string, faceIndex: number): void;
-  setBackground(background: MessageBackground): void;
-  setPositionType(positionType: MessagePositionType): void;
+  setBackground(background: Data_MessageBackground): void;
+  setPositionType(positionType: Data_MessagePositionType): void;
   setChoices(choices: string[], defaultType: number, cancelType: number): void;
-  setChoiceBackground(background: MessageBackground): void;
-  setChoicePositionType(positionType: MessagePositionType): void;
+  setChoiceBackground(background: Data_MessageBackground): void;
+  setChoicePositionType(positionType: Data_MessagePositionType): void;
   setNumberInput(variableId: number, maxDigits: number): void;
   setItemChoice(variableId: number, itemType: number): void;
   setScroll(speed: number, noFast: boolean): void;

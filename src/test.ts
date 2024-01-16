@@ -105,6 +105,17 @@ function nuveurvmrt(params: Data_BattlerParams, xparams: Data_BattlerXParams) {
   let b = params[Data_BattlerParamId.Attack];
 }
 
-function gmyhbcyrmb(wss: Window_NameEdit) {
-  let w = wss as Window;
+function gmyhbcyrmb(weapon: Game_Item<Data_Weapon>) {
+  weapon.setEquip(true, 1);
+  weapon.setEquip(false, 1);
+  weapon.setObject({} as Data_Armor);
+
+  let equipItem: Game_Item<Data_EquipItem> = weapon;
+  equipItem.setEquip(true, 1);
+  equipItem.setObject({} as Data_Armor);
+
+  let item: Game_Item<Data_ItemBase> = weapon;
+  item.setEquip(true, 1);
+
+  item.setObject(null);
 }
