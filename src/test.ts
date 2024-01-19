@@ -76,17 +76,17 @@ int.gameDataOperand(Data_ControlVariablesByGameDataOperandType.Item, 1);
 int.gameDataOperand(
   Data_ControlVariablesByGameDataOperandType.Actor,
   1,
-  Data_ControlVariablesByGameDataActorOperandType.Level,
+  Data_ControlVariablesByGameDataActorOperandType.Level
 );
 int.gameDataOperand(
   Data_ControlVariablesByGameDataOperandType.Enemy,
   1,
-  Data_ControlVariablesByGameDataEnemyOperandType.Hp,
+  Data_ControlVariablesByGameDataEnemyOperandType.Hp
 );
 int.gameDataOperand(
   Data_ControlVariablesByGameDataOperandType.Character,
   1,
-  Data_ControlVariablesByGameDataCharacterOperandType.MapX,
+  Data_ControlVariablesByGameDataCharacterOperandType.MapX
 );
 
 int.operateVariable(1, Data_ControlVariablesOperationType.Set, 2);
@@ -105,17 +105,25 @@ function nuveurvmrt(params: Data_BattlerParams, xparams: Data_BattlerXParams) {
   let b = params[Data_BattlerParamId.Attack];
 }
 
-function gmyhbcyrmb(weapon: Game_Item<Data_Weapon>) {
-  weapon.setEquip(true, 1);
-  weapon.setEquip(false, 1);
-  weapon.setObject({} as Data_Armor);
+function gmyhbcyrmb(wbl: Window_BattleLog) {
 
-  let equipItem: Game_Item<Data_EquipItem> = weapon;
-  equipItem.setEquip(true, 1);
-  equipItem.setObject({} as Data_Armor);
+  let wblm: Window_BattleLogMethod = {
+    name: "isFastForward",
+    params: [],
+  };
 
-  let item: Game_Item<Data_ItemBase> = weapon;
-  item.setEquip(true, 1);
+  wbl.push(
+    "displayRemovedStates", new Game_Battler()
+  );
 
-  item.setObject(null);
+  let c: Data_Command = {
+    code: Data_CommandType.ShowText,
+    indent: 1,
+    parameters: [
+      "",
+      1,
+      Data_MessageBackground.Dimmed,
+      Data_MessagePositionType.Top,
+    ],
+  };
 }

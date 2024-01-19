@@ -1061,11 +1061,19 @@ declare type Data_CommandParameters = {
   [Data_CommandType.PluginCommand]: [command: string];
 };
 
-declare interface Data_Command<T extends Data_CommandType = Data_CommandType> {
-  code: T;
-  indent: number;
-  parameters: Data_CommandParameters[T];
-}
+// declare interface Data_Command<T extends Data_CommandType = Data_CommandType> {
+//   code: T;
+//   indent: number;
+//   parameters: Data_CommandParameters[T];
+// }
+
+declare type Data_Command = {
+  [TCode in Data_CommandType]: {
+    code: TCode;
+    indent: number;
+    parameters: Data_CommandParameters[TCode];
+  };
+}[Data_CommandType];
 
 declare const enum Data_EventWaitMode {
   Message = "message",

@@ -20,3 +20,7 @@ interface AllowOtherParameters {
 }
 
 type OneIndexedArray<T> = [undefined | null, ...T[]];
+
+type PropertiesOfType<TObject, TType> = {
+  [k in keyof TObject]: TObject[k] extends TType ? k : never
+};
