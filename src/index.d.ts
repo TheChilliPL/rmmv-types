@@ -8,5 +8,6 @@
 /// <reference path="./objects/index.d.ts"/>
 /// <reference path="./scenes/index.d.ts"/>
 /// <reference path="./sprites/index.d.ts"/>
+/// <reference path="./windows/index.d.ts"/>
 
 /// <reference path="./plugins.d.ts"/>

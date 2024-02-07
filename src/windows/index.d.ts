@@ -26,6 +26,7 @@
 /// <reference path="./window_menu_command.d.ts"/>
 /// <reference path="./window_menu_status.d.ts"/>
 /// <reference path="./window_message.d.ts"/>
+/// <reference path="./window_name_edit.d.ts"/>
 /// <reference path="./window_name_input.d.ts"/>
 /// <reference path="./window_number_input.d.ts"/>
 /// <reference path="./window_options.d.ts"/>
